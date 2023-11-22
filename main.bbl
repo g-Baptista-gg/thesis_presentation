@@ -1,0 +1,52 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{PhysRevLett.52.417}{article}{}
+    \name{author}{1}{}{%
+      {{hash=TTD}{%
+         family={Thomas},
+         familyi={T\bibinitperiod},
+         given={T.\bibnamedelima Darrah},
+         giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{TTD1}
+    \strng{fullhash}{TTD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRevLett.52.417
+    \endverb
+    \field{issue}{6}
+    \field{pages}{417\bibrangedash 420}
+    \field{title}{Transition from Adiabatic to Sudden Excitation of Core
+  Electrons}
+    \verb{url}
+    \verb https://link.aps.org/doi/10.1103/PhysRevLett.52.417
+    \endverb
+    \field{volume}{52}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{1984}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+\enddatalist
+\endinput
