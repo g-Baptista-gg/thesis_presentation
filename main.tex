@@ -1,5 +1,5 @@
 \documentclass[xcolor=dvipsnames]{beamer}
-\usepackage{tikz,subcaption,amsmath,physics}
+\usepackage{tikz,subcaption,amsmath,physics,xfrac,siunitx}
 \usepackage{tikz-feynman}
 \usetikzlibrary{shadings}
 \setbeamercovered{highly dynamic}
@@ -9,6 +9,7 @@
 \usetheme{Madrid}
 \useoutertheme[subsection=true,footline=authorinstitutetitle]{miniframes} % Alternatively: miniframes, infolines, split
 \useinnertheme{circles}
+\beamertemplatenavigationsymbolsempty
 
 % \definecolor{PrimeCol}{RGB}{21,96,100} % UBC Blue (primary)
 % \definecolor{SecCol}{RGB}{0,196,154} % UBC Grey (secondary)
@@ -169,7 +170,7 @@
 \author{Gonçalo Baptista}
 \institute{NOVA School of Science and Technology}
 \title{X-ray Resonant Raman Scattering}
-\subtitle{Linguistics as a Window for Understanding the Brain}
+\subtitle{an ab-initio calculation}
 
 
 
@@ -207,6 +208,7 @@
 % \institute[NOVA-SST]{RamblingAcademic.com\\Nuts and Bolts of Research. Plus Some Rambling.}
 \AtBeginSection[]
 {
+    \miniframesoff
  \begin{frame}<beamer>
  \frametitle{Overview}
     \begin{columns}[T]
@@ -218,6 +220,7 @@
         \end{column}
     \end{columns}
  \end{frame}
+ \miniframeson
 }
 
 \makeatletter
@@ -306,7 +309,7 @@
 
         \only<7>{\draw[-Stealth] (.2+4/3,4.2) .. controls (2.2,5) .. (2.2,5.8)};
         \only<3>{\draw[-Stealth] (.2+8/3,.7) .. controls (.2+2,1.7) .. (2.2,5.8)};
-        \only<2>{\draw[photon,-Stealth] (4.5,1.5)--(3.,1)};
+        \only<2>{\draw[photon,-Stealth] (4,1.5)--(3.,1)};
         \only<6>{\draw[photon,-Stealth](.2+8/3,1.25)-- (4,2.5)};
         \only<6->{\draw[-Stealth](.2+8/3,1.8)--(.2+8/3,.7)};
         
@@ -483,7 +486,7 @@
         }
         \only<10>{
         \begin{block}{}
-            This process is then repeated up until the energy difference in-between two steps is under a pre-defined benchamark value, as to assure the computation has converged.
+            This process is then repeated up until the energy difference in-between two steps is under a pre-defined benchmark value, as to assure the computation has converged.
         \end{block}
         }
 
@@ -562,30 +565,530 @@
 
     \begin{columns}[T,onlytextwidth]
     \column{0.45\textwidth}
-    While Schrodinguer's equation may be quite accurate for low energy systems (e.g. Hydrogen), where the speed of the surrounding electrons is not comparable to that of light, such is not the case for more complex and heavier systems.
+    While Schrödinger's equation may be quite accurate for low energy systems (e.g. Hydrogen), where the speed of the surrounding electrons is not comparable to that of light, such is not the case for more complex and heavier systems.
     
     \column{0.45\textwidth}
     \begin{block}{Speed of 1s electrons in ground state configurations (\% of $c$)}
         \begin{tabular}{lr}
             Hydrogen:&$0.516\%$\\
-            \alert{Copper:}&{\color{AlertCol}$14.883\%$}
+            \alert{Copper:}&{\color{AlertCol}$14.751\%$}\\
+            Uranium:&$49.211\%$
         \end{tabular}
+        \begin{equation*}
+            E_k=mc^2\qty(\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}-1)
+        \end{equation*}
     \end{block}
-
-
-
 
 
     \end{columns}
     \end{frame}
 
+    \begin{frame}{Relativistic approaches}
+        \begin{columns}[T,onlytextwidth]
+            \column{0.45\textwidth}
+            \only<2->{
+            \begin{block}{Breit equation}
+                \begin{itemize}
+                    \uncover<3->{\item Incorporates the relativistic energy-mass relation.}
+                    \uncover<4->{\item Makes uses of relativistic four-vectors.}
+                    \uncover<5->{\item Is Lorentz invariant}
+                    \uncover<6->{\item Does not account for the effects of the electron spin (valid for $s=0$).}
+                \end{itemize}
+            \end{block}}
+
+            \column{0.45\textwidth}
+            \only<7->{
+            \begin{block}{Dirac equation}
+                \begin{itemize}
+                    \uncover<8->{\item Includes the same advantages of Breit's.}
+                    \uncover<9->{\item Accounts for spin interactions.}
+                    \uncover<10->{\item Yields two-component solutions, for positive and negative energies.}
+                    \uncover<11->{\item The "Dirac sea" originated the talks about the possible existence of anti-particles.}
+                \end{itemize}
+            \end{block}}
+        
+            
+        \end{columns}        
+    \end{frame}
+
+    \begin{frame}{So, what is missing?}
+        \only<1,2>{
+        \begin{equation*}
+                H_D=-\frac{e^2 Z}{r}+\beta m c^2 + \vb{\alpha}\cdot \vb{p}\ c. 
+        \end{equation*}}
+        \only<3->{\begin{equation*}H= H_D + H_B\end{equation*}}
+            \only<2>{\begin{block}{Field retardation effects:}
+                Necessary to account for Breit's corrections:
+                \begin{equation*}
+                    H_B=\sum_{i>j}\frac{e^2}{r_{ij}} - e^2\qty(\frac{\vb*{\alpha}_i\vb*{\alpha}_j}{r_{ij}}+\frac{\qty(\vb*{\alpha}_i \grad_i)\qty(\vb*{\alpha}_j \grad_j)r_{ij}}{2})  ,
+                  \end{equation*}
+            \end{block}}
+            \only<3->{\begin{block}{Field quantization effects (QED):}
+                Necessary to account for effects from Quantum Electrodynamics, such as \alert<4>{Self-energy} and \alert<5>{Vacuum Polarization}.
+
+                \begin{center}
+                    
+                
+                \begin{tikzpicture}[remember picture]
+                    \only<3>{
+                    \begin{feynman}
+                        \vertex (a0) at (0,0);
+                        \vertex [right=of a0] (a1);
+                        \vertex [right= of a1] (a2);
+                        \vertex [ right= of a2] (a3);
+                        \vertex [ right=of a3] (b1);
+                        \vertex [ right=of b1] (b2);
+                        \vertex [ right=of b2] (b3);
+                        \vertex [ right=of b3] (b4);
+
+                        \diagram*{
+                            (a0) --[fermion] (a3),
+                            (a1) -- [photon,half left] (a2),
+                            
+
+                            (b1) -- [photon] (b2),
+                            (b2) -- [fermion,half left] (b3),
+                            (b2) -- [anti fermion,half right] (b3),
+                            (b3) -- [photon] (b4),
+                        };
+                    \end{feynman} }    
+                    \only<4>{
+                    \begin{feynman}
+                        \vertex (a0) at (0,0);
+                        \vertex [right=of a0] (a1);
+                        \vertex [right= of a1] (a2);
+                        \vertex [ right= of a2] (a3);
+                        \vertex [ right=of a3] (b1);
+                        \vertex [ right=of b1] (b2);
+                        \vertex [ right=of b2] (b3);
+                        \vertex [ right=of b3] (b4);
+
+                        \diagram*{
+                            (a0) --[fermion,color=AlertCol] (a3),
+                            (a1) -- [photon,half left,color=AlertCol] (a2),
+                            
+
+                            (b1) -- [photon] (b2),
+                            (b2) -- [fermion,half left] (b3),
+                            (b2) -- [anti fermion,half right] (b3),
+                            (b3) -- [photon] (b4),
+                        };
+                    \end{feynman} }    
+                    \only<5>{
+                    \begin{feynman}
+                        \vertex (a0) at (0,0);
+                        \vertex [right=of a0] (a1);
+                        \vertex [right= of a1] (a2);
+                        \vertex [ right= of a2] (a3);
+                        \vertex [ right=of a3] (b1);
+                        \vertex [ right=of b1] (b2);
+                        \vertex [ right=of b2] (b3);
+                        \vertex [ right=of b3] (b4);
+
+                        \diagram*{
+                            (a0) --[fermion] (a3),
+                            (a1) -- [photon,half left] (a2),
+                            
+
+                            (b1) -- [photon,color=AlertCol] (b2),
+                            (b2) -- [fermion,half left,color=AlertCol] (b3),
+                            (b2) -- [anti fermion,half right,color=AlertCol] (b3),
+                            (b3) -- [photon,color=AlertCol] (b4),
+                        };
+                    \end{feynman} }             
+                \end{tikzpicture}
+            \end{center}
+            \end{block}}
+    \end{frame}
+
 
     
     \subsection{State-of-the-art}
+
+    \begin{frame}{The state-of-the-art}
+            \only<1-4>{
+            \begin{block}{Reasons for this study}
+                \begin{itemize}
+                    \item<1-> Copper is a dominant element in today's technological progress.
+                    \item<2-> A great deal of studies has been performed on its emission spectrum.
+                    \item<3-> Most studies note a skewness in the $K_{\alpha}$ transition lines, being mostly attributed to satellite lines, but leaving open the possibility of its cause coming from \alert{photoexcited states}.
+                    \item<4-> Few experiments were performed for the near-threshold region, so theory needs to be formed to accompany new experimental data. 
+                \end{itemize}
+            \end{block}}
+            \only<5->{
+                \begin{block}{\textit{mcdfgme} (Multi Configuration Dirac-Fock General Matrix Elements)}
+                This code  is a novel computational implementation, based on the Hatree-Fock method, capable of calculating a plethora of atomic parameters, while incorporating all previously mentioned necessary considerations.
+
+                It has proven time and time again to have excellent accuracy and precision when performing calculations for the most varied systems.
+            \end{block}}
+        
+    \end{frame}
+
+
     \section{Atomic structure calculations}
     \subsection{The system at study}
+
+    \begin{frame}{The considered excitations}
+        As previously stated, the focal point of this work is that of computing radiative relaxation spectra for excited Copper.
+        \begin{center}
+            \begin{tikzpicture}[remember picture]
+                \node[anchor =center] at (0,0){{\color{AlertCol}Ground State:} $1s^2\ 2s^2\ 2p^6\ 3s^2\ 3p^6\ 3d^{10}\ 4s^{1}$};
+                \draw[-Stealth] (0,-0.5) -- (0,-1.5);
+                \node[anchor = center] at (0,-2){Excitations of any one of the consituent electrons to orbitals:};
+                \node[anchor=north] at (0,-2.5){
+                    \begin{tabular}{c c c c c c}
+                        $4s$&$4p$&$4d$&$4f$\\
+                        $5s$&$5p$&$5d$&$5f$&$5g$\\
+                        $6s$&$6p$&$6d$&$6f$&$6g$&$6h$\\
+                        $7p$&$8p$&$9p$\\
+                       \end{tabular}
+                };
+             \end{tikzpicture}
+        \end{center}
+
+    \end{frame}
+
+
+    \begin{frame}{The calculated configurations}
+        In order to account to all possible decay possibilities, it was necessary to perform calculations for two different sets of configurations.
+        \begin{columns}[T,onlytextwidth]
+            \column{0.45\textwidth}
+            \begin{block}{1-hole configurations}
+                Related to the initial and final states of radiative transitions.
+
+                Obtained by running a hole through all orbitals in the base-configurations.
+            \end{block}
+            \column{0.45\textwidth}
+            \begin{block}{2-holes configurations}
+                Related to the final states of Auger transitions.
+
+                Obtained by running a combination of two holes through all orbitals in the base-configurations.
+            \end{block}
+            
+        \end{columns}
+    \end{frame}
+
     \subsection{Level calculations}
+    
+
+    \begin{frame}{The level manifold}
+        \only<1>{It is now necessary to compute all possible levels the studied atomic system can be in. As it will be shown, this is no simple task\dots}
+
+        \only<2->{Besides the original configuration, three other sets of quantum numbers are necessary for defining a level:
+        \uncover<3->{
+        \begin{itemize}
+            \item<3-> The hole orbital labels. $(n\ l_j)$
+            \item<4-> The total angular momentum number. $J$
+            \item<5-> The eigenvalue/Lagrange multiplier. $\epsilon$
+        \end{itemize}}
+
+        }
+    \end{frame}
+
+    \begin{frame}{The level manifold- an example: $4p$ excited Copper}
+        \begin{columns}[T,onlytextwidth]
+            \column{0.55\textwidth}
+            \begin{block}{}
+            Here, we know two base things:
+            \begin{itemize}
+                \item The ground state configuration.
+                \item One of the electrons was excited to $4p$
+            \end{itemize}\end{block}
+
+
+            \only<3,4>{These are the \alert{labels $(n\ l_j)$}. 7 in total.}
+
+            \only<4>{Let us analyse an excitation from {\color{red} $2p$}.}
+
+
+            \column{0.4\textwidth}
+            \only<2->{
+            This leads to the possibility of the electron having come from:
+            \begin{itemize}
+                \item $1s$
+                \item $2s$
+                \only<2,3>{\item $2p$}
+                \only<4>{\item {\color{red}$2p$}}
+                % \item $2p$
+                \item $3s$
+                \item $3p$
+                \item $3d$
+                \item $4s$
+            \end{itemize}
+            }
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}{The level manifold- an example: $2p\rightarrow 4p$ excited Copper}
+
+        \only<1->{For this configuration, three subshells are open: $2p$, $4s$, and $4p$.}
+        
+        \only<2->{The different angular momentum couplings lead to various values for \alert{system's total angular momentum}.}
+
+        \only<3->{Possibilities for \alert{$J$} values follow:
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{cc|cc|cc|c}
+                \toprule \multicolumn{2}{c|}{2p}&\multicolumn{2}{c|}{4s}&\multicolumn{2}{c|}{4p}&Total/$J$\\
+                $M_l$ & $M_s$ & $M_l$&$M_s$&$M_l$&$M_s$&$M_l+M_s$\\\midrule
+                $1$&$-\sfrac{1}{2}$&$0$&$-\sfrac{1}{2}$&$1$&$-\sfrac{1}{2}$&$\sfrac{1}{2}$\\
+                $1$&$\sfrac{1}{2}$&$0$&$-\sfrac{1}{2}$&$1$&$-\sfrac{1}{2}$&$\sfrac{3}{2}$\\
+                $1$&$\sfrac{1}{2}$&$0$&$\sfrac{1}{2}$&$1$&$-\sfrac{1}{2}$&\only<3>{$\sfrac{5}{2}$}\only<4->{\color{red}{$\sfrac{5}{2}$}}\\
+                $1$&$\sfrac{1}{2}$&$0$&$\sfrac{1}{2}$&$1$&$\sfrac{1}{2}$&$\sfrac{7}{2}$\\\bottomrule
+            \end{tabular}
+        \end{table}
+        }
+    \end{frame}
+
+
+    \begin{frame}{The level manifold- an example: $2p\rightarrow 4p$, $J=\sfrac{5}{2}$}
+
+        \only<1>{Even for this \textbf{very} specific example, the branching-out continues:}
+        
+        \only<2->{There are many possibilities for achieving this certain combination of a given configuration and $J$ value. Each, is represented by the respective \alert{$\epsilon$}.}
+
+        \only<3>{
+            \begin{table}[h!]
+                \centering
+                \begin{tabular}{cc| cc | cc}
+                    \toprule\multicolumn{6}{c}{$J=\sfrac{5}{2}$}\\\midrule
+                    \multicolumn{2}{c|}{2p}&\multicolumn{2}{c|}{4s}&\multicolumn{2}{c}{4p}\\
+                    $M_l$ & $M_s$ & $M_l$&$M_s$&$M_l$&$M_s$\\\midrule
+                    $1$&$-\sfrac{1}{2}$&$0$&$\sfrac{1}{2}$&$1$&$\sfrac{1}{2}$\\
+                    $1$&$\sfrac{1}{2}$&$0$&$-\sfrac{1}{2}$&$1$&$\sfrac{1}{2}$\\
+                    $1$&$\sfrac{1}{2}$&$0$&$\sfrac{1}{2}$&$1$&$-\sfrac{1}{2}$\\\bottomrule
+                \end{tabular}
+            \end{table}
+        }
+    \end{frame}
+
+
+    \begin{frame}{The level manifold}
+        This set of possibilities and rearrangements form what we call \alert{the level manifold}. In addition, a $2J+1$ level degeneracy is accounted for.
+        \begin{center}
+            \begin{tikzpicture}[remember picture,scale=.7,transform shape]
+                \draw (0,0)node[anchor=south]{$1\text{s}^2\ 2\text{s}^2\  2\text{p}^5\ 3\text{s}^2\ 3\text{p}^6\ 4\text{s}^1\ 4\text{p}^1\ $}--(0,-1);
+                \draw (-6,-1) -- (6,-1);
+                \draw (-6,-1) -- (-6,-2) node [anchor=north]{$J=\sfrac{1}{2}$};
+                \draw (-2,-1) -- (-2,-2)node [anchor=north]{$J=\sfrac{3}{2}$};
+                \draw (2,-1) -- (2,-2)node [anchor=north]{$J=\sfrac{5}{2}$};
+                \draw (6,-1) -- (6,-2)node [anchor=north]{$J=\sfrac{7}{2}$};
+                \draw (6,-2.5) -- (6,-3)node [anchor=north, text centered, align=center, text width=2cm]{
+                    $\sfrac{-7}{2},\ \sfrac{7}{2}$
+                    
+                    $\sfrac{-5}{2},\ \sfrac{5}{2}$
+        
+                    $\sfrac{-3}{2},\ \sfrac{3}{2}$
+        
+                    $\sfrac{-1}{2},\ \sfrac{1}{2}$
+                    };
+                \node at (4.75,-4.15){$M_J =$};
+                \draw (2,-2.5) -- (2,-3.25)node [anchor=north, text centered, align=center, text width=2cm]{
+                    $\sfrac{-5}{2},\ \sfrac{5}{2}$
+                    
+                    $\sfrac{-3}{2},\ \sfrac{3}{2}$
+        
+                    $\sfrac{-1}{2},\ \sfrac{1}{2}$
+                    };
+                \node at (0.75,-4.15){$M_J =$};
+                \draw (-2,-2.5) -- (-2,-3.5)node [anchor=north, text centered, align=center, text width=2cm]{
+                    $\sfrac{-3}{2},\ \sfrac{3}{2}$
+                    
+                    $\sfrac{-1}{2},\ \sfrac{1}{2}$
+                    };
+                \node at (-3.25,-4.15){$M_J =$};
+                \draw (-6,-2.5) -- (-6,-3.75)node [anchor=north, text centered, align=center, text width=2cm]{
+                    $\sfrac{-1}{2},\ \sfrac{1}{2}$
+                    };
+                \node at (-7.25,-4.15){$M_J =$};
+                \node[white] at (7.25,-4){$M_J =$};
+        
+                \node at (-6,-7) {$6+7+3+1= 17$ levels};
+                \node at (4,-7) {$6\times 2+7\times 4+3\times6+1\times 8=66$ states};
+                \draw (6,-5) -- (6,-6)node[anchor=north]{$\epsilon_{\text{max}=1}$};
+                \draw (2,-4.75) -- (2,-6)node[anchor=north]{$\epsilon_{\text{max}=3}$};
+                \draw (-6,-4.3) -- (-6,-6)node[anchor=north]{$\epsilon_{\text{max}=6}$};
+                \draw (-2,-4.6) -- (-2,-6)node[anchor=north]{$\epsilon_{\text{max}=7}$};
+            \end{tikzpicture}
+        \end{center}
+    \end{frame}
+
+    \begin{frame}{Level calculations with \textit{mcdfgme}}
+        A calculation was performed for each existent level.
+        
+        In each of them, a level was treated as a linear combination of state wavefunctions (associated with the eigenvalues) with mixing coefficients:
+
+        \begin{equation*}
+            \ket{\Psi}=a_1\ket{\psi_1}+ a_2\ket{\psi_2} + \dots
+        \end{equation*}
+
+        \begin{columns}[T,onlytextwidth]
+            \column{0.45\textwidth}
+            \begin{block}{Self-consistent field}
+                \begin{itemize}
+                    \item Coulomb interactions
+                    \item Breit considerations
+                    \item Vacuum Polarization
+                \end{itemize}
+            \end{block}
+            \column{0.45\textwidth}
+            \begin{block}{Perturbation theory}
+                Self-energy
+            \end{block}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}{Evaluating the calculation}
+        \begin{columns}[T,onlytextwidth]
+           \column{0.45\textwidth}
+           \begin{block}{What to look out for:}
+            \begin{itemize}
+                \item \alert<2>{Orthogonality conservation}
+                \item \alert<3>{Energy divergences}
+                \item \alert<4>{Effective nuclear charge}
+            \end{itemize}
+           \end{block}
+           \column{.45\textwidth}
+           \only<2>{Due to the method's numerical nature, orthogonality problems may surge.
+
+           We look at overlap values for similar orbitals (same $l_j$) and set a maximum threshold:
+
+           \begin{equation*}
+            \abs{\braket{n\ l_j}{m\ l_j}}\leq 10^{-6}
+           \end{equation*}
+           }
+           \only<3>{
+            A component of the energy is computed through two different methods. For good convergence, the difference in their values should not be above $1\ \si{\electronvolt}$.
+
+            \begin{equation*}
+                \abs*{E_1 - E_2}\leq 1\ \si{\electronvolt}
+            \end{equation*}
+           }
+           \only<4>{
+            The presence of inner electrons leads to a shielding of the positive nuclear charge. As so, outer electrons will be subject to an attenuated positive charge.
+
+            This effect has been previously studied, and the obtained values should be benchmarked.
+           }
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}{Methods for solving the convergence problems}
+        \begin{itemize}
+            \item Changing the number of self-consistent cycles.
+            \item Altering cycle parameters, such as accuracy.
+            \item Choosing the initial trial wavefunctions for select orbitals (e.g. Hydrogenoids or obtained through the Thomas Fermi potential).
+            \item Changing the method for solving the Dirac equation.
+            \item Enforcing the node number for the wavefunctions
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Changes in wavefunctions after the variational process}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=.7\textwidth]{WFcomp.pdf}
+        \end{figure}
+        
+    \end{frame}
+
+    \begin{frame}{Total number of calculated levels}
+
+        \begin{center} For the 19 performed calculations,\end{center}
+        \begin{columns}[T,onlytextwidth]
+        \column{.45\textwidth}
+        \begin{block}{}
+            \begin{itemize}
+                \item 1601 1-hole levels\begin{itemize}
+                    \item 166 manually converged
+                \end{itemize}
+                \item 20550 2-holes levels\begin{itemize}
+                    \item 1678 manually converged
+                \end{itemize}
+            \end{itemize}
+        \end{block}
+        \column{.45\textwidth}
+        \begin{block}{}
+            Leaving a total of:
+            \begin{itemize}
+                \item 22151 levels calculated
+                \item  1844 levels manually converged
+            \end{itemize}
+        \end{block}
+    \end{columns}
+    \end{frame}
+    
     \subsection{Transition computations}
+    \begin{frame}{Atomic transitions}
+        When a system is not found in its least energetic state various processes will occur until the most stable one is reached.
+
+        In this way, for every level, calculations were performed for decays to all possible lower energy states.
+
+        \begin{center}
+            \begin{tikzpicture}[remember picture]
+                \node[anchor=south] at (0,0) {1-hole initial level};
+                \node[anchor=south east] at (-3,-1) {\alert{radiative/diagram}};
+                \node[anchor=south west] at (3,-1) {\alert{Auger}};
+                \node[anchor=center] at (4.5,-2.5) {{\color{red}radiative/satellite}};
+                \node[anchor=east] at (-3,-1) {1-hole final level};
+                \node[anchor=west] at (3,-1) {2-holes final level};
+                \node[anchor=west] at (3,-3) {{\color{red}2-holes final level}};
+                \draw (0,0) -- (-3,-1);
+                \draw (0,0) -- (3,-1);
+                \draw (3,-1) -- (3,-3);
+
+                \node[anchor=east] at (-3,-2.5){$E_{i,f}=E_i-E_f$};
+
+            \end{tikzpicture}
+        \end{center}
+    \end{frame}
+
+    \begin{frame}{Radiative transitions}
+
+        Given the set of all 1-hole levels, with $n$ elements, the total number of these transitions (without accounting for level degeneracy), $N$, is simply given by the amount of combinations of two elements between the set:
+
+        \begin{equation*}
+            N=\frac{n!}{2\cdot\qty(n-2)!}
+        \end{equation*}
+
+        For these transitions, \alert{full orbital relaxation} was allowed.
+
+        The \textit{mcdfgme} calculation yields the rates for each Electric and/or Magnetic component/pole for both Coulomb (length) and Lorentz (velocity) gauges.
+    \end{frame}
+
+    \begin{frame}{Auger transitions}
+        The total number of Auger transitions can not be calculated \textit{a priori}. Since the 1-hole and 2-holes level sets are ''independent'', the level structure needs to be calculated in order to fully resolve the number of transitions.
+
+
+
+        For computing these transitions, the free-electron wavefunction has to be computed for the initial state potential, and \alert{orthogonality is enforced} between the free-wave and bound orbitals.
+    \end{frame}
+
+    \begin{frame}{All calculated transitions}
+        In total, for this work,
+
+        \begin{itemize}
+            \item<2->70885 diagram radiative
+            \item<3->452988 Auger
+            \item<4-> 6684258 satellite radiative  
+        \end{itemize}
+        \only<5->{transitions were calculated, totaling to 7208131 computations performed.}
+    \end{frame}
+
+    \begin{frame}{Rate and Energy matrices}
+        \only<1>{To evaluate and benchmark a calculation, a visualization tool was used, where the calculated \alert{energy} and \alert{rate} values were displayed in a grid-like view.}
+        \only<2>{
+            \begin{tikzpicture}[remember picture]
+                \node at (0,0){\includegraphics[width=\textwidth]{4p_RM.pdf}};
+            \end{tikzpicture}
+        }
+        \only<3>{
+            \begin{tikzpicture}[remember picture]
+                \node at (0,0){\includegraphics[width=\textwidth]{7p_RM.pdf}};
+            \end{tikzpicture}
+        }
+    \end{frame}
+
+
     \subsection{Fundamental atomic parameters}
     \section{Spectra simulation}
     \subsection{Line shape}
