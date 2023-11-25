@@ -7,14 +7,14 @@
 \beamer@subsectionintoc {2}{2}{Level calculations}{60}{0}{2}
 \beamer@subsectionintoc {2}{3}{Transition computations}{85}{0}{2}
 \beamer@subsectionintoc {2}{4}{Fundamental atomic parameters}{96}{0}{2}
-\beamer@sectionintoc {3}{Spectra simulation}{96}{0}{3}
-\beamer@subsectionintoc {3}{1}{Line shape}{97}{0}{3}
-\beamer@subsectionintoc {3}{2}{Photoexcitation}{97}{0}{3}
-\beamer@subsectionintoc {3}{3}{Photoionization}{97}{0}{3}
-\beamer@subsectionintoc {3}{4}{The synthetic spectrum}{97}{0}{3}
-\beamer@sectionintoc {4}{Spectral Analysis}{97}{0}{4}
-\beamer@subsectionintoc {4}{1}{The theoretical results}{98}{0}{4}
-\beamer@subsectionintoc {4}{2}{Comparison with experimental data}{98}{0}{4}
-\beamer@sectionintoc {5}{A new parallelization code}{98}{0}{5}
-\beamer@subsectionintoc {5}{1}{The MPI approach}{99}{0}{5}
-\beamer@subsectionintoc {5}{2}{Speedup comparison}{99}{0}{5}
+\beamer@sectionintoc {3}{Spectra simulation}{111}{0}{3}
+\beamer@subsectionintoc {3}{1}{Line shape}{112}{0}{3}
+\beamer@subsectionintoc {3}{2}{Photoexcitation}{118}{0}{3}
+\beamer@subsectionintoc {3}{3}{Photoionization}{121}{0}{3}
+\beamer@subsectionintoc {3}{4}{The synthetic spectrum}{121}{0}{3}
+\beamer@sectionintoc {4}{Spectral Analysis}{121}{0}{4}
+\beamer@subsectionintoc {4}{1}{The theoretical results}{122}{0}{4}
+\beamer@subsectionintoc {4}{2}{Comparison with experimental data}{122}{0}{4}
+\beamer@sectionintoc {5}{A new parallelization code}{122}{0}{5}
+\beamer@subsectionintoc {5}{1}{The MPI approach}{123}{0}{5}
+\beamer@subsectionintoc {5}{2}{Speedup comparison}{123}{0}{5}

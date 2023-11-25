@@ -76,42 +76,56 @@
 \headcommand {\beamer@framepages {93}{95}}
 \headcommand {\beamer@subsectionpages {85}{95}}
 \headcommand {\beamer@subsectionentry {0}{2}{4}{96}{Fundamental atomic parameters}}
-\headcommand {\beamer@sectionpages {57}{95}}
-\headcommand {\beamer@subsectionpages {96}{95}}
-\headcommand {\sectionentry {3}{Spectra simulation}{96}{Spectra simulation}{0}}
-\headcommand {\beamer@subsectionpages {96}{96}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{97}{Line shape}}
-\headcommand {\beamer@subsectionpages {97}{96}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{97}{Photoexcitation}}
-\headcommand {\beamer@subsectionpages {97}{96}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{97}{Photoionization}}
-\headcommand {\beamer@subsectionpages {97}{96}}
-\headcommand {\beamer@subsectionentry {0}{3}{4}{97}{The synthetic spectrum}}
-\headcommand {\beamer@sectionpages {96}{96}}
-\headcommand {\beamer@subsectionpages {97}{96}}
-\headcommand {\sectionentry {4}{Spectral Analysis}{97}{Spectral Analysis}{0}}
-\headcommand {\beamer@subsectionpages {97}{97}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{98}{The theoretical results}}
-\headcommand {\beamer@subsectionpages {98}{97}}
-\headcommand {\beamer@subsectionentry {0}{4}{2}{98}{Comparison with experimental data}}
-\headcommand {\beamer@sectionpages {97}{97}}
-\headcommand {\beamer@subsectionpages {98}{97}}
-\headcommand {\sectionentry {5}{A new parallelization code}{98}{A new parallelization code}{0}}
-\headcommand {\gdef \insertmainframenumber {34}}
-\headcommand {\beamer@subsectionpages {98}{98}}
-\headcommand {\beamer@subsectionentry {0}{5}{1}{99}{The MPI approach}}
-\headcommand {\beamer@subsectionpages {99}{98}}
-\headcommand {\beamer@subsectionentry {0}{5}{2}{99}{Speedup comparison}}
+\headcommand {\slideentry {2}{4}{1}{96/97}{Fundamental atomic parameters}{0}}
+\headcommand {\beamer@framepages {96}{97}}
+\headcommand {\slideentry {2}{4}{2}{98/100}{Fundamental atomic parameters}{0}}
+\headcommand {\beamer@framepages {98}{100}}
+\headcommand {\slideentry {2}{4}{3}{101/106}{Fundamental atomic parameters}{0}}
+\headcommand {\beamer@framepages {101}{106}}
+\headcommand {\slideentry {2}{4}{4}{107/110}{Fundamental atomic parameters}{0}}
+\headcommand {\beamer@framepages {107}{110}}
+\headcommand {\beamer@sectionpages {57}{110}}
+\headcommand {\beamer@subsectionpages {96}{110}}
+\headcommand {\sectionentry {3}{Spectra simulation}{111}{Spectra simulation}{0}}
+\headcommand {\beamer@subsectionpages {111}{111}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{112}{Line shape}}
+\headcommand {\slideentry {3}{1}{1}{112/116}{Line shape}{0}}
+\headcommand {\beamer@framepages {112}{116}}
+\headcommand {\slideentry {3}{1}{2}{117/117}{Line shape}{0}}
+\headcommand {\beamer@framepages {117}{117}}
+\headcommand {\beamer@subsectionpages {112}{117}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{118}{Photoexcitation}}
+\headcommand {\slideentry {3}{2}{1}{118/120}{Photoexcitation}{0}}
+\headcommand {\beamer@framepages {118}{120}}
+\headcommand {\beamer@subsectionpages {118}{120}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{121}{Photoionization}}
+\headcommand {\beamer@subsectionpages {121}{120}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{121}{The synthetic spectrum}}
+\headcommand {\beamer@sectionpages {111}{120}}
+\headcommand {\beamer@subsectionpages {121}{120}}
+\headcommand {\sectionentry {4}{Spectral Analysis}{121}{Spectral Analysis}{0}}
+\headcommand {\beamer@subsectionpages {121}{121}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{122}{The theoretical results}}
+\headcommand {\beamer@subsectionpages {122}{121}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{122}{Comparison with experimental data}}
+\headcommand {\beamer@sectionpages {121}{121}}
+\headcommand {\beamer@subsectionpages {122}{121}}
+\headcommand {\sectionentry {5}{A new parallelization code}{122}{A new parallelization code}{0}}
+\headcommand {\gdef \insertmainframenumber {41}}
+\headcommand {\beamer@subsectionpages {122}{122}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{123}{The MPI approach}}
+\headcommand {\beamer@subsectionpages {123}{122}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{123}{Speedup comparison}}
 \headcommand {\partentry {\translate {Appendix}}{1}}
-\headcommand {\beamer@partpages {1}{98}}
-\headcommand {\beamer@sectionpages {98}{98}}
-\headcommand {\beamer@subsectionpages {99}{98}}
-\headcommand {\beamer@appendixpages {99}}
-\headcommand {\beamer@sectionpages {99}{98}}
-\headcommand {\beamer@subsectionpages {99}{98}}
-\headcommand {\sectionentry {6}{+}{99}{+}{1}}
-\headcommand {\beamer@partpages {99}{100}}
-\headcommand {\beamer@subsectionpages {99}{100}}
-\headcommand {\beamer@sectionpages {99}{100}}
-\headcommand {\beamer@documentpages {100}}
-\headcommand {\gdef \inserttotalframenumber {36}}
+\headcommand {\beamer@partpages {1}{122}}
+\headcommand {\beamer@sectionpages {122}{122}}
+\headcommand {\beamer@subsectionpages {123}{122}}
+\headcommand {\beamer@appendixpages {123}}
+\headcommand {\beamer@sectionpages {123}{122}}
+\headcommand {\beamer@subsectionpages {123}{122}}
+\headcommand {\sectionentry {6}{+}{123}{+}{1}}
+\headcommand {\beamer@partpages {123}{124}}
+\headcommand {\beamer@subsectionpages {123}{124}}
+\headcommand {\beamer@sectionpages {123}{124}}
+\headcommand {\beamer@documentpages {124}}
+\headcommand {\gdef \inserttotalframenumber {43}}

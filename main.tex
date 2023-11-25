@@ -447,7 +447,7 @@
     In its most basic form, for a "classical" atom (nucleus + electrons), and when relativistic effects are not taken into account, the considered Hamiltonian follows the one use in Schrödinger's equation:
 
     \begin{equation*}
-        \hat{H}=\displaystyle \sum_i^N\only<1,3->{\frac{1}{2}\laplacian_i}\only<2>{{\color{AlertCol}\frac{1}{2}\laplacian_i}} \only<1-2,4->{- \frac{Z}{r_i}} \only<3>{{\color{AlertCol}- \frac{Z}{r_i}}} + \sum_{j>i}\only<1-3>{ \frac{1}{r_{ij}}}\only<4>{{\color{AlertCol}+ \frac{1}{r_{ij}}}}
+        \hat{H}=\displaystyle \sum_i^N\only<1,3->{\frac{1}{2}\laplacian_i}\only<2>{{\color{AlertCol}\frac{1}{2}\laplacian_i}} \only<1-2,4->{- \frac{Z}{r_i}} \only<3>{{\color{AlertCol}- \frac{Z}{r_i}}} + \sum_{j>i}\only<1-3>{ \frac{1}{r_{ij}}}\only<4>{{\color{AlertCol}\frac{1}{r_{ij}}}}
     \end{equation*}
     
     \uncover<2->{It incorporates:
@@ -511,11 +511,11 @@
         \draw[color=PrimeCol] (0,0) circle (1cm);
         
         \draw[fill=AlertCol,dashed] (0,0) circle (.3cm);
-        \uncover<2->{\draw[fill=SecCol]  (0,1) circle (.2cm);}
+        \only<2->{\draw[fill=SecCol]  (0,1) circle (.2cm);}
         \draw[color=PrimeCol] (0,0) circle (2cm);
-        \uncover<4->{\draw[fill=SecCol]  (0.707106781*2,0.707106781*2) circle (.2cm);}
+        \only<4->{\draw[fill=SecCol]  (0.707106781*2,0.707106781*2) circle (.2cm);}
         \draw[color=PrimeCol] (0,0) circle (3cm);
-        \uncover<6->{\draw[fill=SecCol]  (-0.707106781*3,0.707106781*3) circle (.2cm);}
+        \only<6->{\draw[fill=SecCol]  (-0.707106781*3,0.707106781*3) circle (.2cm);}
 
 
         \end{tikzpicture}
@@ -587,7 +587,7 @@
         \begin{columns}[T,onlytextwidth]
             \column{0.45\textwidth}
             \only<2->{
-            \begin{block}{Breit equation}
+            \begin{block}{Klein-Gordon equation}
                 \begin{itemize}
                     \uncover<3->{\item Incorporates the relativistic energy-mass relation.}
                     \uncover<4->{\item Makes uses of relativistic four-vectors.}
@@ -600,7 +600,7 @@
             \only<7->{
             \begin{block}{Dirac equation}
                 \begin{itemize}
-                    \uncover<8->{\item Includes the same advantages of Breit's.}
+                    \uncover<8->{\item Includes the same advantages as the previous.}
                     \uncover<9->{\item Accounts for spin interactions.}
                     \uncover<10->{\item Yields two-component solutions, for positive and negative energies.}
                     \uncover<11->{\item The "Dirac sea" originated the talks about the possible existence of anti-particles.}
@@ -1088,11 +1088,208 @@
         }
     \end{frame}
 
-
     \subsection{Fundamental atomic parameters}
+    \begin{frame}{Total radiative and non-radiative rates}
+        \only<1>{After computing all possible transitions, one can now start to evaluate certain atomic parameters.}
+
+        \only<2->{To start, the total radiative and non-radiative rates for each level should be computed. When compared, they can provide information on the probability of said level decaying either way.
+        
+        
+        \begin{equation*}
+            R_i^R = \qty(2 J_i + 1 )\sum_f R_{i,f}^R
+        \end{equation*}
+
+        \begin{equation*}
+            R_i^{NR} = \qty(2 J_i + 1 )\sum_f R_{i,f}^{NR}
+        \end{equation*}
+        }
+    \end{frame}
+
+    \begin{frame}{Fluorescence Yield}
+    \only<1>{    The quantity is an indicator of the probability of a level decaying either via the emission of a photon as opposed to an Auger electron.
+
+        It is given by the ratio between the level's radiative and total rates:
+
+        \begin{equation*}
+            \omega_i = \frac{R_i^R}{R_i^R+ R_i^{NR}}
+        \end{equation*}}
+
+    \only<2>{
+            For ionized Copper, the $K$ shell F.Y. was computed to be $45.34\%$.
+
+            \alert{Every calculated excited state presented a value inferior to this.}
+            \begin{columns}[T,onlytextwidth]
+                \column{.45\textwidth}
+                \begin{block}{\centering Minimum value:}
+                    \begin{center}
+                    {\color{blue}
+                    
+                    $6s$-excited Copper
+
+                    $18.09\%$}
+                \end{center}
+                \end{block}
+                \column{.45\textwidth}
+                \begin{block}{\centering Maximum value:}
+                    \begin{center}
+                        {\color{red}
+                        
+                        $4s$-excited Copper
+    
+                        $44.88\%$}
+                    \end{center}
+                \end{block}
+                
+            \end{columns}
+
+            \vspace{.5 cm}
+            This decrease can be explained by the \alert{presence of an extra electron} increasing the number of Auger channels.
+
+    }
+    \only<3>{
+        \begin{block}{Other subshells}
+            For other subshells, save for $M_{4,5}$,  the F.Y. slightly oscillated around the obtained value for ionized Copper, but mostly \alert{preserving the same order of magnitude}.
+        \end{block}
+        \begin{block}{$M_{4,5}$ subshells}
+            Curiously both for ionized Copper and for all excitations to $ns$ orbitals, as well as $4p$ and $5p$, \alert{only radiative decays occur}, while for the rest, \alert{Auger transitions reign}.
+        \end{block}
+    }
+    \end{frame}
+
+    \begin{frame}{Level widths}
+        \only<1>{Quantum mechanics tells us bound systems are arranged in states with \alert{quantized energy}, hence why a discrete amount of levels was calculated, a not a continuum.}
+        \only<2>{It does, however, also alert us to natural uncertainties, as described by the well-known \alert{Heisenberg uncertainty principle}.
+        }
+        \only<3,4>{While the momentum-position relation is certainly the most famous one, its energy-time counterpart will have implications in the next steps:}
+        
+        \only<4,5->{\begin{equation*}
+            \Delta E \Delta t \geq \hbar
+        \end{equation*}
+        }
+
+        \only<5->{From this, we can naturally deduce that, a level which decays to other lower energy ones $\qty(R\rightarrow\frac{1}{\Delta t})$, should, in principle, also have an \alert{energy width}.
+
+        As such, we define the level width as:
+
+        \begin{equation*}
+            \Gamma_i = \hbar \cdot\qty(R_i^R+R_i^{NR})
+        \end{equation*}}
+
+        \only<6>{And the width of a transition as the sum of the widths for the initial and final level:
+        \begin{equation*}
+            \Gamma_{i,f} = \Gamma_i + \Gamma_f
+        \end{equation*}
+        }
+        
+    \end{frame}
+
+    \begin{frame}{Transition intensities}
+        Now that many atomic parameters are calculated, it is possible to calculate the spectral intensity of a given transition.
+
+        \begin{equation*}
+            I_{i,f} = \alert<4>{N_i}
+            \alert<2>{\frac{2J_i+1}{g_{\text{sub}}}}
+            \alert<3>{\frac{R_{i,f}}{R_i^R+R_i^{NR}}}
+        \end{equation*}
+
+        Put into simple terms, the intensity is nothing more than the product of the statistical weight of the \alert<2>{level multiplicity}, of the \alert<3>{individual rate} compared to the total one, and a \alert<4>{scaling factor accounting for population generation}.
+        
+    
+    \end{frame}
+
     \section{Spectra simulation}
     \subsection{Line shape}
+    \begin{frame}{The theoretical spectral shape}
+        \only<1>{Based on all previously computed atomic parameters, it is now possible to start simulating spectral lines.}
+        \only<2-4>{
+            \vspace{-0.5cm}
+            \begin{columns}[onlytextwidth,T]
+                \column{.45\textwidth}
+                \begin{block}{Lorentzian profile}
+                Describes the theoretical line shape for the emission:
+                \begin{equation*}
+                    \frac{I_{i,f}}{2\pi}\frac{\Gamma_{i,f}}{\qty(E-E_{i,f})^2 + \qty(\Gamma_{i,f}/2)^2}
+                \end{equation*}
+
+                Does not account for \alert{thermal distributions} and \alert{stochastic events}.
+            \end{block}
+
+            \only<3-4>{
+                \column{.45\textwidth}
+                \begin{block}{Gaussian profile}
+                    This profile will be used to account for any \alert{broadening effects} that may impact the measured spectra.
+                    \begin{equation*}
+                        \frac{1}{\sigma\sqrt{2\pi}}\exp(-\frac{E^2}{2\sigma^2})
+                    \end{equation*}
+                \end{block}
+            }
+            \end{columns}
+            \only<4>{\vfill The convolution of both gives rise to the \alert{Voigt profile}, incorporating all the desired effects, at the cost of computational power.}
+        }
+        \only<5>{
+            \begin{figure}
+                \centering
+                \includegraphics[width=.7\textwidth]{K_lorentz_voigt.pdf}
+            \end{figure}
+        }
+    \end{frame}
+
+    \begin{frame}{The incident beam}
+        For the purpose of this work, the desired source of radiation for such study would be a synchrotron line.
+
+        \begin{itemize}
+            \item Due to the usage of wigglers and undulators, the beam can be close to monochromatic.
+            \item The energy of the radiation used is tunable, allowing for the survey from regions below to post-ionization threshold.
+        \end{itemize}
+
+        As such, a beam profile of $0.5\ \si{\electronvolt}$ was considered.
+    \end{frame}
+
     \subsection{Photoexcitation}
+    \begin{frame}{What about $N_i$? The photoexcitation case}
+       \only<1>{The computation of this parameter is somewhat tricky.
+        \begin{itemize}
+            \item No analytical expression for cross-sections could be found.
+            \item Should be calculated ab-initio (no data from outside).
+            \item Must simulate the resonance effect.
+            \item Needs to be valid (according to the laws of physics).
+            \item The beam profile should be considered.
+        \end{itemize}}
+        \only<2>{\framesubtitle{The proposed solution:}
+        To solve this problem, an \textit{ad-hoc} expression was developed.
+
+        The \alert{rate} and \alert{energy} of the transition from ground state to the excited state was considered by looking at the inverse transition.
+        \begin{center}
+            \begin{tikzpicture}[remember picture]
+                \draw (0,0) -- (2,0);
+                \node[anchor=north] at (1,0) {Ground state};
+                \draw[-Stealth,AlertCol] (1,0) -- (2.5,3);
+
+                \draw (2,3) -- (4,3);
+                \node[anchor=south] at (3,3) {Intermediate state};
+
+                \draw (4,1) -- (6,1);
+                \node[anchor=north] at (5,1) {Final state};
+                \draw[-Stealth] (3.5,3) -- (5,1);
+
+                \node at (0,2){{\color{AlertCol}Populating transition}};
+                \node[anchor=west] at (1.7,0.8){\alert{$E_{\text{exc}},R_{\text{exc}}$}};
+            \end{tikzpicture}
+        \end{center}
+        }
+
+        \only<3>{
+        A Lorentzian profile was then created using both the energy value, and the associated  rate. The overlap between this profile and the beam's was computed and multiplied by the rate:
+
+        \begin{equation*}
+            N_i=R_{\text{exc}}\int_{-\infty}^{\infty} G\qty(E-E_{\text{beam}},0.5\ \si{\electronvolt})\cdot L\qty(E-E_{\text{exc}},\Gamma_{\text{exc}})\ \dd{E}
+        \end{equation*}
+
+        }
+    \end{frame}
+
+
+    
     \subsection{Photoionization}
     \subsection{The synthetic spectrum}
     \section{Spectral Analysis}
