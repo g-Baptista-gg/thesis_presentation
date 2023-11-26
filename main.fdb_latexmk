@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 0 "main.aux" "main.bbl" "main" 0 -1
+["bibtex main"] 1701040770 "main.aux" "main.bbl" "main" 1701040794 0
   "./bibliography.bib" 1700690789 434 9589141c1e8cf9a429ffff231ce32fe3 ""
-  "./main-blx.bib" 1701038648 343 27af2fa4d0370999ebe8f3266686c889 ""
+  "./main-blx.bib" 1701040792 343 27af2fa4d0370999ebe8f3266686c889 ""
   "c:/texlive/2023/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1687304964 65484 b7949c47a88ed6dca66ebc7a04577312 ""
-  "main.aux" 1701038648 14567 d776985ce88c3ae8fef18e0411717558 "pdflatex"
+  "main.aux" 1701040792 14548 f688d05ab7f357d94d121e637e9f1e27 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1701038626 "c:/Users/gonca/OneDrive/Ambiente de Trabalho/thesis_presentation/main.tex" "main.pdf" "main" 1701038649 2
+["pdflatex"] 1701040771 "c:/Users/gonca/OneDrive/Ambiente de Trabalho/thesis_presentation/main.tex" "main.pdf" "main" 1701040794 0
   "4p_RM.pdf" 1700849852 303764 9e9c8929ce3d04c67f2d3ca490144888 ""
   "500uL.pdf" 1700690789 105467 ca568904aaddb49c2a2d2ca063a04aab ""
   "7p_RM.pdf" 1700849852 284029 f218e2f53c19f05d2858d841a8b35691 ""
@@ -24,7 +24,7 @@
   "assym_intensities.pdf" 1701022900 175122 349274042f5e04ccd4d195bdd320a533 ""
   "assym_widths.pdf" 1701022889 174271 89406be8f024075e4497bc17bd9bc7b1 ""
   "both_50keV.pdf" 1695142790 82969 1f67599e3d4f8688386c4d1d0592737b ""
-  "c:/Users/gonca/OneDrive/Ambiente de Trabalho/thesis_presentation/main.tex" 1701038601 69219 493d2f2fa9861c76c55da4b637aef072 ""
+  "c:/Users/gonca/OneDrive/Ambiente de Trabalho/thesis_presentation/main.tex" 1701040745 69028 62c3b85a081c8d9bf6ffc515de22e05a ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1687305710 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1687304774 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1687304774 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -348,13 +348,13 @@
   "c:/texlive/2023/texmf.cnf" 1687307911 713 e69b156964470283e0530f5060668171 ""
   "ito.png" 1701027256 155333 186d45a6d426526ff5f40f770b2c8c7e ""
   "logo_libphys.png" 1700690789 10764 7d5028fc23107b50c241edd8a657401c ""
-  "main.aux" 1701038648 14567 d776985ce88c3ae8fef18e0411717558 "pdflatex"
-  "main.bbl" 1701038602 1426 e1a84d7cf7085fcf96694b8645cfa7de "bibtex main"
-  "main.nav" 1701038648 8502 5230e407966b07927f36fa67cab70f8f "pdflatex"
-  "main.out" 1701038648 3489 f8978c9609b5961f20e875c9c0a824a4 "pdflatex"
-  "main.run.xml" 1701038648 2621 8c4e84b4b6e826ce2f71c3018783dbb7 "pdflatex"
-  "main.tex" 1701038601 69219 493d2f2fa9861c76c55da4b637aef072 ""
-  "main.toc" 1701038648 1303 c9a33c8aa20d29e80f170f1c8ebe3254 "pdflatex"
+  "main.aux" 1701040792 14548 f688d05ab7f357d94d121e637e9f1e27 "pdflatex"
+  "main.bbl" 1701040771 1426 e1a84d7cf7085fcf96694b8645cfa7de "bibtex main"
+  "main.nav" 1701040792 8502 5230e407966b07927f36fa67cab70f8f "pdflatex"
+  "main.out" 1701040792 3489 f8978c9609b5961f20e875c9c0a824a4 "pdflatex"
+  "main.run.xml" 1701040792 2621 8c4e84b4b6e826ce2f71c3018783dbb7 "pdflatex"
+  "main.tex" 1701040745 69028 62c3b85a081c8d9bf6ffc515de22e05a ""
+  "main.toc" 1701040792 1303 c9a33c8aa20d29e80f170f1c8ebe3254 "pdflatex"
   "medical_xray.jpg" 1700690789 73707 a3f100e9151693fde90fd92356e4f400 ""
   "thomas_model.png" 1700690789 53520 6fde8ebb048b651a10f410621959309a ""
   (generated)
