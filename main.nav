@@ -97,35 +97,59 @@
 \headcommand {\beamer@subsectionentry {0}{3}{2}{118}{Photoexcitation}}
 \headcommand {\slideentry {3}{2}{1}{118/120}{Photoexcitation}{0}}
 \headcommand {\beamer@framepages {118}{120}}
-\headcommand {\beamer@subsectionpages {118}{120}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{121}{Photoionization}}
-\headcommand {\beamer@subsectionpages {121}{120}}
-\headcommand {\beamer@subsectionentry {0}{3}{4}{121}{The synthetic spectrum}}
-\headcommand {\beamer@sectionpages {111}{120}}
-\headcommand {\beamer@subsectionpages {121}{120}}
-\headcommand {\sectionentry {4}{Spectral Analysis}{121}{Spectral Analysis}{0}}
-\headcommand {\beamer@subsectionpages {121}{121}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{122}{The theoretical results}}
-\headcommand {\beamer@subsectionpages {122}{121}}
-\headcommand {\beamer@subsectionentry {0}{4}{2}{122}{Comparison with experimental data}}
-\headcommand {\beamer@sectionpages {121}{121}}
-\headcommand {\beamer@subsectionpages {122}{121}}
-\headcommand {\sectionentry {5}{A new parallelization code}{122}{A new parallelization code}{0}}
-\headcommand {\gdef \insertmainframenumber {41}}
-\headcommand {\beamer@subsectionpages {122}{122}}
-\headcommand {\beamer@subsectionentry {0}{5}{1}{123}{The MPI approach}}
-\headcommand {\beamer@subsectionpages {123}{122}}
-\headcommand {\beamer@subsectionentry {0}{5}{2}{123}{Speedup comparison}}
+\headcommand {\slideentry {3}{2}{2}{121/121}{Photoexcitation}{0}}
+\headcommand {\beamer@framepages {121}{121}}
+\headcommand {\beamer@subsectionpages {118}{121}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{122}{Photoionization}}
+\headcommand {\slideentry {3}{3}{1}{122/124}{Photoionization}{0}}
+\headcommand {\beamer@framepages {122}{124}}
+\headcommand {\beamer@subsectionpages {122}{124}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{125}{The synthetic spectrum}}
+\headcommand {\slideentry {3}{4}{1}{125/126}{The synthetic spectrum}{0}}
+\headcommand {\beamer@framepages {125}{126}}
+\headcommand {\slideentry {3}{4}{2}{127/127}{The synthetic spectrum}{0}}
+\headcommand {\beamer@framepages {127}{127}}
+\headcommand {\beamer@sectionpages {111}{127}}
+\headcommand {\beamer@subsectionpages {125}{127}}
+\headcommand {\sectionentry {4}{Spectral Analysis}{128}{Spectral Analysis}{0}}
+\headcommand {\slideentry {4}{0}{2}{129/135}{}{0}}
+\headcommand {\beamer@framepages {129}{135}}
+\headcommand {\beamer@subsectionpages {128}{135}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{136}{The theoretical results}}
+\headcommand {\slideentry {4}{1}{1}{136/136}{The theoretical results}{0}}
+\headcommand {\beamer@framepages {136}{136}}
+\headcommand {\slideentry {4}{1}{2}{137/137}{The theoretical results}{0}}
+\headcommand {\beamer@framepages {137}{137}}
+\headcommand {\slideentry {4}{1}{3}{138/138}{The theoretical results}{0}}
+\headcommand {\beamer@framepages {138}{138}}
+\headcommand {\slideentry {4}{1}{4}{139/139}{The theoretical results}{0}}
+\headcommand {\beamer@framepages {139}{139}}
+\headcommand {\beamer@subsectionpages {136}{139}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{140}{Comparison with experimental data}}
+\headcommand {\slideentry {4}{2}{1}{140/140}{Comparison with experimental data}{0}}
+\headcommand {\beamer@framepages {140}{140}}
+\headcommand {\beamer@sectionpages {128}{140}}
+\headcommand {\beamer@subsectionpages {140}{140}}
+\headcommand {\sectionentry {5}{A new parallelization code}{141}{A new parallelization code}{0}}
+\headcommand {\beamer@subsectionpages {141}{141}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{142}{The MPI approach}}
+\headcommand {\slideentry {5}{1}{1}{142/144}{The MPI approach}{0}}
+\headcommand {\beamer@framepages {142}{144}}
+\headcommand {\beamer@subsectionpages {142}{144}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{145}{Speedup comparison}}
+\headcommand {\slideentry {5}{2}{1}{145/145}{Speedup comparison}{0}}
+\headcommand {\beamer@framepages {145}{145}}
+\headcommand {\gdef \insertmainframenumber {53}}
 \headcommand {\partentry {\translate {Appendix}}{1}}
-\headcommand {\beamer@partpages {1}{122}}
-\headcommand {\beamer@sectionpages {122}{122}}
-\headcommand {\beamer@subsectionpages {123}{122}}
-\headcommand {\beamer@appendixpages {123}}
-\headcommand {\beamer@sectionpages {123}{122}}
-\headcommand {\beamer@subsectionpages {123}{122}}
-\headcommand {\sectionentry {6}{+}{123}{+}{1}}
-\headcommand {\beamer@partpages {123}{124}}
-\headcommand {\beamer@subsectionpages {123}{124}}
-\headcommand {\beamer@sectionpages {123}{124}}
-\headcommand {\beamer@documentpages {124}}
-\headcommand {\gdef \inserttotalframenumber {43}}
+\headcommand {\beamer@partpages {1}{145}}
+\headcommand {\beamer@sectionpages {141}{145}}
+\headcommand {\beamer@subsectionpages {145}{145}}
+\headcommand {\beamer@appendixpages {146}}
+\headcommand {\beamer@sectionpages {146}{145}}
+\headcommand {\beamer@subsectionpages {146}{145}}
+\headcommand {\sectionentry {6}{+}{146}{+}{1}}
+\headcommand {\beamer@partpages {146}{147}}
+\headcommand {\beamer@subsectionpages {146}{147}}
+\headcommand {\beamer@sectionpages {146}{147}}
+\headcommand {\beamer@documentpages {147}}
+\headcommand {\gdef \inserttotalframenumber {55}}

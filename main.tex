@@ -5,6 +5,14 @@
 \setbeamercovered{highly dynamic}
 % \tikzfeynmanset{compat=1.1.0}
 \usetikzlibrary{shapes,arrows,decorations.pathmorphing,arrows.meta}
+
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{arrowdiag} = [thick,->,>=stealth]
+
 \usepackage{booktabs}
 \usetheme{Madrid}
 \useoutertheme[subsection=true,footline=authorinstitutetitle]{miniframes} % Alternatively: miniframes, infolines, split
@@ -1246,7 +1254,7 @@
     \end{frame}
 
     \subsection{Photoexcitation}
-    \begin{frame}{What about $N_i$? The photoexcitation case}
+    \begin{frame}{What about $N_i$? The photoexcitation effect}
        \only<1>{The computation of this parameter is somewhat tricky.
         \begin{itemize}
             \item No analytical expression for cross-sections could be found.
@@ -1288,16 +1296,192 @@
         }
     \end{frame}
 
+    \begin{frame}[plain]
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{absorption.pdf}
+        \end{figure}
+    \end{frame}
+
+
 
     
     \subsection{Photoionization}
+
+    \begin{frame}{What about $N_i$? The photoionization effect}
+        \only<1>{
+        For energies over the threshold, ionization starts to occur. This effect, will be the predominant one, once the threshold is reached.
+
+        For K-shell ionization, there are \alert{two possible levels}, with different values of total angular momentum:
+
+        \begin{columns}[onlytextwidth,T]
+            \column{.45\textwidth}
+            \begin{block}{\centering$J=0$}
+                \begin{itemize}
+                    \item $1s$, $4s$ counteraligned spins.
+                    \item Multiplicity of 1
+                    \item Edge energy of $8986.02\ \si{\electronvolt}$
+                \end{itemize}
+            \end{block}
+            \column{.45\textwidth}
+            \begin{block}{\centering$J=1$}
+                \begin{itemize}
+                    \item $1s$, $4s$ aligned spins.
+                    \item Multiplicity of 3
+                    \item Edge energy of $8985.93\ \si{\electronvolt}$
+                \end{itemize}
+            \end{block}
+        \end{columns}}
+
+        \only<2>{
+
+        The differential oscillator strength were calculated by performing \textit{mcdfgme} calculations for different incoming photon energies:
+
+        \begin{columns}[onlytextwidth,c]
+            \column{.5\textwidth}
+            \begin{figure}
+                \includegraphics[width=\textwidth]{both_50keV.pdf}
+            \end{figure}
+
+            \column{.47\textwidth}
+            \begin{block}{Oscillator strength $\leftrightarrow$ Rate}
+                \begin{equation*}
+                    O_s=2.304\cdot 10^{-8}\qty[\si{\electronvolt^2\second}]\cdot\frac{g_{fin}/g_{in}}{E^2}\cdot R
+                \end{equation*}
+            \end{block}
+        \end{columns}
+        }
+        \only<3>{In a similar fashion, $N_i$ was computed by the overlap between these profiles  and the beam's.}
+    \end{frame}
+
     \subsection{The synthetic spectrum}
+
+    \begin{frame}{Compiling the results}
+        \only<1>{After this extremely extensive process, it is now finally possible to account for every interaction, and build a synthetic spectrum.} \only<2>{By accounting for every one of the thousands of computed transitions we get\dots}
+    \end{frame}
+
+    \begin{frame}{The final spectrum}
+        {\color{red}MUDAR A IMAGEM PARA MAIS RECENTE}
+        \begin{figure}
+            \centering
+            \includegraphics[width=.8\textwidth]{all_log_alt.pdf}
+        \end{figure}
+    \end{frame}
+
     \section{Spectral Analysis}
+
+    \begin{frame}{The analysis profiles}
+
+        \only<1>{As previously stated, each spectral line is, in reality composed by a great set of many others. As such, it is not expected to be symmetric, and single Lorentzian and Gaussian profiles are not suited for spectral analysis.}
+        \only<2->{For each spectral line ($K_{\alpha_1}$ or $K_{\alpha_2}$), an asymmetric Lorentzian profile was fitted, and an analysis was performed throughout the beam energies.
+        
+        \begin{equation*}
+            \frac{\alert<4>{I}}{2\pi}\frac{\alert<6>{\Gamma}}{\qty(\frac{E-\alert<5>{E_x}}{\alert<7>{\alpha}\cdot \text{sign}\qty(E-\alert<5>{E_x})+1})^2+\qty(\alert<6>{\Gamma}/2)^2}
+        \end{equation*}
+        }
+
+        \only<3->{Aside from the \alert<4>{Intensity}, the \alert<5>{Energy}, and the \alert<6>{Width} parameters, it also now includes an \alert<7>{asymmetry index}.}
+    \end{frame}
     \subsection{The theoretical results}
+
+    \begin{frame}{Transition energy}
+        
+    \end{frame}
+
+    
+    \begin{frame}{Transition width}
+        
+    \end{frame}
+
+    
+    \begin{frame}{Spectral intensity}
+        
+    \end{frame}
+
+    
+    \begin{frame}{Asymmetry index}
+        
+    \end{frame}
+
     \subsection{Comparison with experimental data}
+
+    \begin{frame}{Experimental spectrum from a synchrotron line}
+        
+    \end{frame}
     \section{A new parallelization code}
     \subsection{The MPI approach}
+    
+    \begin{frame}{Why the necessity?}
+        \only<1>{As previously stated, the amount of calculations needed to be performed makes manual calculations simply unfeasible.}
+
+        \only<2>{   {\color{red} But is a simple automation algorithm enough?}
+
+
+        No, even with a conventional implementation of an automation script, the amount of time to needed for the computation would still be unreasonable.
+        }
+
+        \only<3>{
+
+        {\color{red} The solution? Parallelization.}
+
+        A \textit{master-rank} implementation was used in order to tackle this challenge.
+        \begin{itemize}
+            \item Using Python due to its flexibility
+            \item Using MPI due to its scalability
+            \item Able to exploit the computer's physical threads.
+        \end{itemize}
+            \begin{center}
+                \begin{tikzpicture}[remember picture]
+
+
+                    \node[anchor=south] at (0,0) {Rank 0};
+
+                    \node[anchor=north] at (-4,-2) {Rank 1};
+                    \node[anchor=north] at (-2,-2) {Rank 2};
+                    \node[anchor=north] at (0,-2) {...};
+                    \node[anchor=north] at (4,-2) {Rank N-1};
+                    \node[anchor=north] at (2,-2) {Rank N-2};
+
+                    \draw [-{Straight Barb[left]},AlertCol] (0-0.6,0) -- (-4
+                    +.1,-2);
+                    \draw [-{Straight Barb[left]},PrimeCol] (-4-0.1,-2) -- (0-0.8,0);
+                    
+                    \draw [-{Straight Barb[left]},AlertCol] (0-0.2,0) -- (-2
+                    +.1,-2);
+                    \draw [-{Straight Barb[left]},PrimeCol] (-2-0.1,-2) -- (0-0.4,0);
+
+
+                    \draw [-{Straight Barb[right]},AlertCol] (0+0.6,0) -- (+4
+                    -.1,-2);
+                    \draw [-{Straight Barb[right]},PrimeCol] (4+0.1,-2) -- (0+0.8,0);
+                    
+                    \draw [-{Straight Barb[right]},AlertCol] (0+0.2,0) -- (2
+                    -.1,-2);
+                    \draw [-{Straight Barb[right]},PrimeCol] (2+0.1,-2) -- (0+0.4,0);
+                    \node[anchor=east,color=AlertCol] at (-2,-0.5) {orders/tasks};
+                    \node[anchor=west,color=PrimeCol] at (2,-0.5) {results};
+
+                \end{tikzpicture}
+            \end{center}
+            
+        }      
+
+
+    \end{frame}
+
+
+    
     \subsection{Speedup comparison}
+    
+    \begin{frame}{Comparison with other implementations}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{amdahl.pdf}
+        \end{figure}
+
+    \end{frame}
+
     \miniframesoff
     \appendix
     \section*{+}
