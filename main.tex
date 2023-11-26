@@ -13,6 +13,7 @@
 \tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black]
 \tikzstyle{arrowdiag} = [thick,->,>=stealth]
 
+
 \usepackage{booktabs}
 \usetheme{Madrid}
 \useoutertheme[subsection=true,footline=authorinstitutetitle]{miniframes} % Alternatively: miniframes, infolines, split
@@ -337,62 +338,7 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{Alternative processes}
-\begin{block}{Shake processes}
-   Post-ionization, the different number of particles in the system leads to a change in the Hamiltonian. This leads to the lack of orthogonality between non-equivalent states and free-wave wavefunctions in the initial and final configurations.
-       % \begin{equation}
-       %     \hfill\uncover<2->{\braket{1\text{s}_\text{i}}{2\text{s}_\text{f}}\neq 0}\qquad \uncover<3->{ \braket{1\text{s}_\text{i}}{e^{-}_\text{free}}\neq 0}
-       % \end{equation}
-      \begin{equation*}
-           \hfill\braket{1\text{s}_\text{i}}{2\text{s}_\text{f}}\neq 0  \qquad\braket{1\text{s}_\text{i}}{e^{-}_\text{free}}\neq 0
-       \end{equation*}
-\end{block}
 
-
-
-
-\begin{columns}[T,onlytextwidth]
-    \column{0.45\textwidth}
-    \uncover<2>{\begin{block}{Shake-up}
-        Excitation of extra electron(s).
-    \end{block}}
-    \column{0.45\textwidth}
-    \uncover<3>{\begin{block}{Shake-off}
-        Ionization of extra electron(s).
-    \end{block}}
-\end{columns}
-
-\begin{tikzpicture}[overlay,remember picture]
-\only<2>{\draw[line width=.5mm,color= PrimeCol] ([xshift=-3cm,yshift=-1.2cm]current page.center) -- ([xshift=-5cm,yshift=-1.2cm]current page.center)};
-\only<2>{\draw[line width=.5mm,color= PrimeCol,-Stealth] ([xshift=-5cm,yshift=-1.2cm]current page.center) -- ([xshift=-5cm,yshift=-2cm]current page.center)};
-
-\only<3>{\draw[line width=.5mm,color= PrimeCol] ([xshift=3cm,yshift=-1.2cm]current page.center) -- ([xshift=5cm,yshift=-1.2cm]current page.center);
-\draw[line width=.5mm,color= PrimeCol,-Stealth] ([xshift=5cm,yshift=-1.2cm]current page.center) -- ([xshift=5cm,yshift=-2cm]current page.center);}
-
-
-\end{tikzpicture}
-\end{frame}
-
-\begin{frame}[c]{Alternative processes}
-\begin{columns}[T,onlytextwidth]
-\column{0.45\textwidth}
-
-    \begin{block}{Shake Processes}
-    The probability of these processes occurring is extremely dependent on the incident energy.
-
-    Since for this thesis, the energy ranges studied were below the ionization threshold, no shake processes were accounted for.
-\end{block}
-\column{0.45\textwidth}
-\vspace{-1.2cm}
-\begin{figure}
-    \centering
-    \includegraphics[width=.9\linewidth]{thomas_model.png}
-    \caption{Thomas model for shake probability.~\cite{PhysRevLett.52.417}}
-    
-\end{figure}
-    
-\end{columns}
-\end{frame}
 
 
 \begin{frame}{Other processes}
@@ -455,7 +401,8 @@
     In its most basic form, for a "classical" atom (nucleus + electrons), and when relativistic effects are not taken into account, the considered Hamiltonian follows the one use in Schrödinger's equation:
 
     \begin{equation*}
-        \hat{H}=\displaystyle \sum_i^N\only<1,3->{\frac{1}{2}\laplacian_i}\only<2>{{\color{AlertCol}\frac{1}{2}\laplacian_i}} \only<1-2,4->{- \frac{Z}{r_i}} \only<3>{{\color{AlertCol}- \frac{Z}{r_i}}} + \sum_{j>i}\only<1-3>{ \frac{1}{r_{ij}}}\only<4>{{\color{AlertCol}\frac{1}{r_{ij}}}}
+        %\hat{H}=\displaystyle \sum_i^N\only<1,3->{\frac{1}{2}\laplacian_i}\only<2>{{\color{AlertCol}\frac{1}{2}\laplacian_i}} \only<1-2,4->{- \frac{Z}{r_i}} \only<3>{{\color{AlertCol}- \frac{Z}{r_i}}} + \sum_{j>i}\only<1-3>{ \frac{1}{r_{ij}}}\only<4>{{\color{AlertCol}\frac{1}{r_{ij}}}}
+        \hat{H}=\displaystyle \sum_i^N \alert<2>{\frac{1}{2}\laplacian_i}\alert<3>{- \frac{Z}{r_i}}+ \sum_{j>i}+\alert<4>{\frac{1}{r_{ij}}}
     \end{equation*}
     
     \uncover<2->{It incorporates:
@@ -492,16 +439,10 @@
             Through a {\color{AlertCol}self-consistent} field approach, the method solves, for each cycle, a set of integro-differential equations as a way to compute new wavefunctions and the new energy for the system.
         \end{block}
         }
-        \only<10>{
-        \begin{block}{}
-            This process is then repeated up until the energy difference in-between two steps is under a pre-defined benchmark value, as to assure the computation has converged.
-        \end{block}
-        }
+        
 
         \column{0.5\textwidth}
-        \only<10>{
-            METER DIAGRAMA DE BLOCOS
-        }
+        
         
         \only<1-7>{
         \begin{center}\vspace{-1cm}
@@ -531,27 +472,27 @@
         \end{center}}
         \only<9>{
         \begin{center}
-        \vspace{-1cm}
+        \vspace{0cm}
         \begin{tikzpicture}
             \node[anchor=east] at (0,0) {$E_0$};
-            \node[anchor=east] at (0,3) {$E_1$};
-            \node[anchor=east] at (0,4) {$E_2$};
-            \node[anchor=east] at (0,4.5) {$E_3$};
-            \node[anchor=east,color=AlertCol] at (0,5) {$E_\text{opt}$};
+            \node[anchor=east] at (0,-2) {$E_1$};
+            \node[anchor=east] at (0,-3) {$E_2$};
+            \node[anchor=east] at (0,-3.5) {$E_3$};
+            \node[anchor=east,color=AlertCol] at (0,-4) {$E_\text{opt}$};
 
-            \node[anchor=west] at (3,0) {$N=1$};
-            \node[anchor=west] at (3,3) {$N=2$};
-            \node[anchor=west] at (3,4) {$N=3$};
-            \node[anchor=west] at (3,4.5) {$N=4$};
-            \node[anchor=west,color=AlertCol] at (3,5) {$N=\infty$};
+            \node[anchor=west] at (3,-0) {$N=0$};
+            \node[anchor=west] at (3,-2) {$N=1$};
+            \node[anchor=west] at (3,-3) {$N=2$};
+            \node[anchor=west] at (3,-3.5) {$N=3$};
+            \node[anchor=west,color=AlertCol] at (3,-4) {$N=\infty$};
             
             \draw (0,0) -- (3,0);
-            \draw (0,3) -- (3,3);
-            \draw (0,4) -- (3,4);
-            \draw (0,4.5) -- (3,4.5);
-            \draw (0,4.7) -- (3,4.7);
-            \draw (0,4.9) -- (3,4.9);
-            \draw[dashed,color=AlertCol] (0,5) -- (3,5);
+            \draw (0,-2) -- (3,-2);
+            \draw (0,-3) -- (3,-3);
+            \draw (0,-3.5) -- (3,-3.5);
+            \draw (0,-3.7) -- (3,-3.7);
+            \draw (0,-3.9) -- (3,-3.9);
+            \draw[dashed,color=AlertCol] (0,-4) -- (3,-4);
         \end{tikzpicture}
             
         \end{center}
@@ -567,6 +508,41 @@
         \end{equation*}
         }
         \end{columns}
+
+
+        \only<10>{
+            \vfill
+            \begin{center}
+                \begin{tikzpicture}[node distance=5cm,every text node part/.style={align=center},remember picture,transform shape,scale=.6]
+                    \node (initWF) [startstop] {Define Initial \\ Test Wavefunctions};
+                    \node (loadWF) [io, right of=initWF, yshift=-0cm] {Initial \\ Wavefunctions};
+                    \node (EnCalc1) [process,above of = loadWF,yshift= -2cm]{Compute \\ Energy ($E_i$)};
+                    \node (calcPotential) [process,right of= loadWF]{Compute HF\\ potential};
+                    \node (calcWF) [process, right of = calcPotential,yshift=0cm]{Solve HF equations \\ for new potential};
+                    \node (newWF) [io, below of=calcWF,yshift=1cm] {New \\ Wavefunctions};
+                    \node (EnCalc2) [process,left of = newWF,xshift = 0cm]{Compute \\ Energy ($E_f$)};
+                    \node (EnComp) [decision,left of = EnCalc2,yshift=0cm]{$E_i-E_f\leq \lambda$?};
+                    \node (stop) [startstop,left of = EnComp,yshift=0cm] {End of \\ algorithm};
+            
+                    \draw [arrowdiag] (initWF) -- (loadWF);
+                    \draw [arrowdiag] (loadWF) -- (EnCalc1);
+                    \draw [arrowdiag] (loadWF) -- (calcPotential);
+                    \draw [arrowdiag] (calcPotential) -- (calcWF);
+                    \draw [arrowdiag] (calcWF) -- (newWF);
+                    \draw [arrowdiag] (newWF) -- (EnCalc2);
+                    \draw [arrowdiag] (EnCalc2) -- (EnComp);
+                    \node (aux1) [above of =EnComp,yshift=-2.5cm] {Load new WF as initial WF\\ No};
+                    \node (aux2) [left of =EnComp,xshift=2.5cm] {Yes};
+                    \draw (EnComp) -- (aux1);
+                    \draw [arrowdiag] (aux1) -- (loadWF);
+                    \draw [arrowdiag] (aux2) -- (stop);
+                    \draw (EnComp) -- (aux2);
+                \end{tikzpicture}
+            \end{center}
+            \vfill
+        }
+
+
     \end{frame}
 
     \begin{frame}{Limitations of the non-relativistic approach}
@@ -785,9 +761,9 @@
         \only<2->{Besides the original configuration, three other sets of quantum numbers are necessary for defining a level:
         \uncover<3->{
         \begin{itemize}
-            \item<3-> The hole orbital labels. $(n\ l_j)$
-            \item<4-> The total angular momentum number. $J$
-            \item<5-> The eigenvalue/Lagrange multiplier. $\epsilon$
+            \item<3-> The hole orbital labels $(n\ l_j)$
+            \item<4-> The total angular momentum number $J$
+            \item<5-> The eigenvalue/Lagrange multiplier $\epsilon$
         \end{itemize}}
 
         }
@@ -874,7 +850,7 @@
     \begin{frame}{The level manifold}
         This set of possibilities and rearrangements form what we call \alert{the level manifold}. In addition, a $2J+1$ level degeneracy is accounted for.
         \begin{center}
-            \begin{tikzpicture}[remember picture,scale=.7,transform shape]
+            \begin{tikzpicture}[remember picture,scale=.6,transform shape]
                 \draw (0,0)node[anchor=south]{$1\text{s}^2\ 2\text{s}^2\  2\text{p}^5\ 3\text{s}^2\ 3\text{p}^6\ 4\text{s}^1\ 4\text{p}^1\ $}--(0,-1);
                 \draw (-6,-1) -- (6,-1);
                 \draw (-6,-1) -- (-6,-2) node [anchor=north]{$J=\sfrac{1}{2}$};
@@ -982,10 +958,9 @@
 
     \begin{frame}{Methods for solving the convergence problems}
         \begin{itemize}
-            \item Changing the number of self-consistent cycles.
-            \item Altering cycle parameters, such as accuracy.
+            \item Changing the parameters of the self-consistent cycle. 
             \item Choosing the initial trial wavefunctions for select orbitals (e.g. Hydrogenoids or obtained through the Thomas Fermi potential).
-            \item Changing the method for solving the Dirac equation.
+            \item Using other methods for solving the Dirac equation.
             \item Enforcing the node number for the wavefunctions
         \end{itemize}
     \end{frame}
@@ -1034,15 +1009,15 @@
         \begin{center}
             \begin{tikzpicture}[remember picture]
                 \node[anchor=south] at (0,0) {1-hole initial level};
-                \node[anchor=south east] at (-3,-1) {\alert{radiative/diagram}};
+                \node[anchor=south east] at (-3,-1) {\alert{Radiative/diagram}};
                 \node[anchor=south west] at (3,-1) {\alert{Auger}};
-                \node[anchor=center] at (4.5,-2.5) {{\color{red}radiative/satellite}};
+                \node[anchor=center] at (4.5,-2.5) {{\color{red}Radiative/satellite}};
                 \node[anchor=east] at (-3,-1) {1-hole final level};
                 \node[anchor=west] at (3,-1) {2-holes final level};
                 \node[anchor=west] at (3,-3) {{\color{red}2-holes final level}};
-                \draw (0,0) -- (-3,-1);
-                \draw (0,0) -- (3,-1);
-                \draw (3,-1) -- (3,-3);
+                \draw[-Stealth] (0,0) -- (-3,-1);
+                \draw[-Stealth] (0,0) -- (3,-1);
+                \draw[-Stealth,red] (3,-1) -- (3,-3);
 
                 \node[anchor=east] at (-3,-2.5){$E_{i,f}=E_i-E_f$};
 
@@ -1050,36 +1025,17 @@
         \end{center}
     \end{frame}
 
-    \begin{frame}{Radiative transitions}
-
-        Given the set of all 1-hole levels, with $n$ elements, the total number of these transitions (without accounting for level degeneracy), $N$, is simply given by the amount of combinations of two elements between the set:
-
-        \begin{equation*}
-            N=\frac{n!}{2\cdot\qty(n-2)!}
-        \end{equation*}
-
-        For these transitions, \alert{full orbital relaxation} was allowed.
-
-        The \textit{mcdfgme} calculation yields the rates for each Electric and/or Magnetic component/pole for both Coulomb (length) and Lorentz (velocity) gauges.
-    \end{frame}
-
-    \begin{frame}{Auger transitions}
-        The total number of Auger transitions can not be calculated \textit{a priori}. Since the 1-hole and 2-holes level sets are ''independent'', the level structure needs to be calculated in order to fully resolve the number of transitions.
-
-
-
-        For computing these transitions, the free-electron wavefunction has to be computed for the initial state potential, and \alert{orthogonality is enforced} between the free-wave and bound orbitals.
-    \end{frame}
+    
 
     \begin{frame}{All calculated transitions}
-        In total, for this work,
+        The total number of transitions calculated:
 
         \begin{itemize}
-            \item<2->70885 diagram radiative
+            \item<2->70885 radiative diagram
             \item<3->452988 Auger
-            \item<4-> 6684258 satellite radiative  
+            \item<4-> 6684258 radiative satellite   
         \end{itemize}
-        \only<5->{transitions were calculated, totaling to 7208131 computations performed.}
+        \only<5->{Totaling to 7208131 computations performed.}
     \end{frame}
 
     \begin{frame}{Rate and Energy matrices}
@@ -1208,11 +1164,9 @@
     \section{Spectra simulation}
     \subsection{Line shape}
     \begin{frame}{The theoretical spectral shape}
-        \only<1>{Based on all previously computed atomic parameters, it is now possible to start simulating spectral lines.}
-        \only<2-4>{
-            \vspace{-0.5cm}
-            \begin{columns}[onlytextwidth,T]
-                \column{.45\textwidth}
+        Based on all previously computed atomic parameters, it is now possible to start simulating spectral lines.
+        
+           
                 \begin{block}{Lorentzian profile}
                 Describes the theoretical line shape for the emission:
                 \begin{equation*}
@@ -1222,24 +1176,7 @@
                 Does not account for \alert{thermal distributions} and \alert{stochastic events}.
             \end{block}
 
-            \only<3-4>{
-                \column{.45\textwidth}
-                \begin{block}{Gaussian profile}
-                    This profile will be used to account for any \alert{broadening effects} that may impact the measured spectra.
-                    \begin{equation*}
-                        \frac{1}{\sigma\sqrt{2\pi}}\exp(-\frac{E^2}{2\sigma^2})
-                    \end{equation*}
-                \end{block}
-            }
-            \end{columns}
-            \only<4>{\vfill The convolution of both gives rise to the \alert{Voigt profile}, incorporating all the desired effects, at the cost of computational power.}
-        }
-        \only<5>{
-            \begin{figure}
-                \centering
-                \includegraphics[width=.7\textwidth]{K_lorentz_voigt.pdf}
-            \end{figure}
-        }
+        
     \end{frame}
 
     \begin{frame}{The incident beam}
@@ -1287,7 +1224,7 @@
         }
 
         \only<3>{
-        A Lorentzian profile was then created using both the energy value, and the associated  rate. The overlap between this profile and the beam's was computed and multiplied by the rate:
+        A Lorentzian profile was then created using both the energy value, and the associated  rate. The overlap between this profile and the beam's was computed and normalized to the rate:
 
         \begin{equation*}
             N_i=R_{\text{exc}}\int_{-\infty}^{\infty} G\qty(E-E_{\text{beam}},0.5\ \si{\electronvolt})\cdot L\qty(E-E_{\text{exc}},\Gamma_{\text{exc}})\ \dd{E}
@@ -1299,7 +1236,7 @@
     \begin{frame}[plain]
         \begin{figure}
             \centering
-            \includegraphics[width=\textwidth]{absorption.pdf}
+            \includegraphics[width=\textwidth]{absorption_ppt.pdf}
         \end{figure}
     \end{frame}
 
@@ -1333,25 +1270,25 @@
             \end{block}
         \end{columns}}
 
-        \only<2>{
+        \only<2,3>{
 
-        The differential oscillator strength were calculated by performing \textit{mcdfgme} calculations for different incoming photon energies:
+        \only<2>{The differential oscillator strength were calculated by performing \textit{mcdfgme} calculations for different incoming photon energies:
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=.6\textwidth]{both_50keV.pdf}
+        \end{figure}
+        }
+        \only<3>{
 
-        \begin{columns}[onlytextwidth,c]
-            \column{.5\textwidth}
-            \begin{figure}
-                \includegraphics[width=\textwidth]{both_50keV.pdf}
-            \end{figure}
-
-            \column{.47\textwidth}
             \begin{block}{Oscillator strength $\leftrightarrow$ Rate}
                 \begin{equation*}
                     O_s=2.304\cdot 10^{-8}\qty[\si{\electronvolt^2\second}]\cdot\frac{g_{fin}/g_{in}}{E^2}\cdot R
                 \end{equation*}
-            \end{block}
-        \end{columns}
+            \end{block}}
+
         }
-        \only<3>{In a similar fashion, $N_i$ was computed by the overlap between these profiles  and the beam's.}
+        \only<4>{In a similar fashion, $N_i$ was computed by the overlap between these profiles  and the beam's.}
     \end{frame}
 
     \subsection{The synthetic spectrum}
@@ -1361,7 +1298,6 @@
     \end{frame}
 
     \begin{frame}{The final spectrum}
-        {\color{red}MUDAR A IMAGEM PARA MAIS RECENTE}
         \begin{figure}
             \centering
             \includegraphics[width=.8\textwidth]{all_log_alt.pdf}
@@ -1369,7 +1305,7 @@
     \end{frame}
 
     \section{Spectral Analysis}
-
+    \subsection{Line profiles}
     \begin{frame}{The analysis profiles}
 
         \only<1>{As previously stated, each spectral line is, in reality composed by a great set of many others. As such, it is not expected to be symmetric, and single Lorentzian and Gaussian profiles are not suited for spectral analysis.}
@@ -1385,28 +1321,44 @@
     \subsection{The theoretical results}
 
     \begin{frame}{Transition energy}
-        
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{assym_centroids.pdf}
+        \end{figure}
     \end{frame}
 
     
     \begin{frame}{Transition width}
-        
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{assym_widths.pdf}
+        \end{figure}
     \end{frame}
 
     
     \begin{frame}{Spectral intensity}
-        
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{assym_intensities.pdf}
+        \end{figure}
+
     \end{frame}
 
     
     \begin{frame}{Asymmetry index}
-        
+        \begin{figure}
+            \centering
+            \includegraphics[width=.7\textwidth]{assym_index.pdf}
+        \end{figure}
     \end{frame}
 
     \subsection{Comparison with experimental data}
 
     \begin{frame}{Experimental spectrum from a synchrotron line}
-        
+        \begin{figure}
+            \centering
+            \includegraphics[width=.7\textwidth]{ito.png}
+        \end{figure}
     \end{frame}
     \section{A new parallelization code}
     \subsection{The MPI approach}
@@ -1546,5 +1498,119 @@
      
  \end{frame}
 
+ \begin{frame}{Alternative processes}
+    \begin{block}{Shake processes}
+       Post-ionization, the different number of particles in the system leads to a change in the Hamiltonian. This leads to the lack of orthogonality between non-equivalent states and free-wave wavefunctions in the initial and final configurations.
+           % \begin{equation}
+           %     \hfill\uncover<2->{\braket{1\text{s}_\text{i}}{2\text{s}_\text{f}}\neq 0}\qquad \uncover<3->{ \braket{1\text{s}_\text{i}}{e^{-}_\text{free}}\neq 0}
+           % \end{equation}
+          \begin{equation*}
+               \hfill\braket{1\text{s}_\text{i}}{2\text{s}_\text{f}}\neq 0  \qquad\braket{1\text{s}_\text{i}}{e^{-}_\text{free}}\neq 0
+           \end{equation*}
+    \end{block}
+    
+    
+    
+    
+    \begin{columns}[T,onlytextwidth]
+        \column{0.45\textwidth}
+        \uncover<2>{\begin{block}{Shake-up}
+            Excitation of extra electron(s).
+        \end{block}}
+        \column{0.45\textwidth}
+        \uncover<3>{\begin{block}{Shake-off}
+            Ionization of extra electron(s).
+        \end{block}}
+    \end{columns}
+    
+    \begin{tikzpicture}[overlay,remember picture]
+    \only<2>{\draw[line width=.5mm,color= PrimeCol] ([xshift=-3cm,yshift=-1.2cm]current page.center) -- ([xshift=-5cm,yshift=-1.2cm]current page.center)};
+    \only<2>{\draw[line width=.5mm,color= PrimeCol,-Stealth] ([xshift=-5cm,yshift=-1.2cm]current page.center) -- ([xshift=-5cm,yshift=-2cm]current page.center)};
+    
+    \only<3>{\draw[line width=.5mm,color= PrimeCol] ([xshift=3cm,yshift=-1.2cm]current page.center) -- ([xshift=5cm,yshift=-1.2cm]current page.center);
+    \draw[line width=.5mm,color= PrimeCol,-Stealth] ([xshift=5cm,yshift=-1.2cm]current page.center) -- ([xshift=5cm,yshift=-2cm]current page.center);}
+    
+    
+    \end{tikzpicture}
+    \end{frame}
+    
+    \begin{frame}[c]{Alternative processes}
+    \begin{columns}[T,onlytextwidth]
+    \column{0.45\textwidth}
+    
+        \begin{block}{Shake Processes}
+        The probability of these processes occurring is extremely dependent on the incident energy.
+    
+        Since for this thesis, the energy ranges studied were below the ionization threshold, no shake processes were accounted for.
+    \end{block}
+    \column{0.45\textwidth}
+    \vspace{-1.2cm}
+    \begin{figure}
+        \centering
+        \includegraphics[width=.9\linewidth]{thomas_model.png}
+        \caption{Thomas model for shake probability.~\cite{PhysRevLett.52.417}}
+        
+    \end{figure}
+        
+    \end{columns}
+    \end{frame}
 
+
+    \begin{frame}{Radiative transitions}
+
+        Given the set of all 1-hole levels, with $n$ elements, the total number of these transitions (without accounting for level degeneracy), $N$, is simply given by the amount of combinations of two elements between the set:
+
+        \begin{equation*}
+            N=\frac{n!}{2\cdot\qty(n-2)!}
+        \end{equation*}
+
+        For these transitions, \alert{full orbital relaxation} was allowed.
+
+        The \textit{mcdfgme} calculation yields the rates for each Electric and/or Magnetic component/pole for both Coulomb (length) and Lorentz (velocity) gauges.
+    \end{frame}
+
+    \begin{frame}{Auger transitions}
+        The total number of Auger transitions can not be calculated \textit{a priori}. Since the 1-hole and 2-holes level sets are ''independent'', the level structure needs to be calculated in order to fully resolve the number of transitions.
+
+
+
+        For computing these transitions, the free-electron wavefunction has to be computed for the initial state potential, and \alert{orthogonality is enforced} between the free-wave and bound orbitals.
+    \end{frame}
+
+
+
+    \begin{frame}{The theoretical spectral shape}
+        \only<1>{Based on all previously computed atomic parameters, it is now possible to start simulating spectral lines.}
+        \only<2-4>{
+            \vspace{-0.5cm}
+            \begin{columns}[onlytextwidth,T]
+                \column{.45\textwidth}
+                \begin{block}{Lorentzian profile}
+                Describes the theoretical line shape for the emission:
+                \begin{equation*}
+                    \frac{I_{i,f}}{2\pi}\frac{\Gamma_{i,f}}{\qty(E-E_{i,f})^2 + \qty(\Gamma_{i,f}/2)^2}
+                \end{equation*}
+
+                Does not account for \alert{thermal distributions} and \alert{stochastic events}.
+            \end{block}
+
+            \only<3-4>{
+                \column{.45\textwidth}
+                \begin{block}{Gaussian profile}
+                    This profile will be used to account for any \alert{broadening effects} that may impact the measured spectra.
+                    \begin{equation*}
+                        \frac{1}{\sigma\sqrt{2\pi}}\exp(-\frac{E^2}{2\sigma^2})
+                    \end{equation*}
+                \end{block}
+            }
+            \end{columns}
+            \only<4>{\vfill The convolution of both gives rise to the \alert{Voigt profile}, incorporating all the desired effects, at the cost of computational power.}
+        }
+        \only<5>{
+            \begin{figure}
+                \centering
+                \includegraphics[width=.7\textwidth]{K_lorentz_voigt.pdf}
+            \end{figure}
+        }
+    \end{frame}
 \end{document}

@@ -1,0 +1,21 @@
+\beamer@sectionintoc {1}{Theoretical Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Characteristic x-rays}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{The Hamiltonian}{17}{0}{1}
+\beamer@subsectionintoc {1}{3}{State-of-the-art}{48}{0}{1}
+\beamer@sectionintoc {2}{Atomic structure calculations}{53}{0}{2}
+\beamer@subsectionintoc {2}{1}{The system at study}{54}{0}{2}
+\beamer@subsectionintoc {2}{2}{Level calculations}{56}{0}{2}
+\beamer@subsectionintoc {2}{3}{Transition computations}{81}{0}{2}
+\beamer@subsectionintoc {2}{4}{Fundamental atomic parameters}{90}{0}{2}
+\beamer@sectionintoc {3}{Spectra simulation}{105}{0}{3}
+\beamer@subsectionintoc {3}{1}{Line shape}{106}{0}{3}
+\beamer@subsectionintoc {3}{2}{Photoexcitation}{108}{0}{3}
+\beamer@subsectionintoc {3}{3}{Photoionization}{112}{0}{3}
+\beamer@subsectionintoc {3}{4}{The synthetic spectrum}{116}{0}{3}
+\beamer@sectionintoc {4}{Spectral Analysis}{119}{0}{4}
+\beamer@subsectionintoc {4}{1}{Line profiles}{120}{0}{4}
+\beamer@subsectionintoc {4}{2}{The theoretical results}{127}{0}{4}
+\beamer@subsectionintoc {4}{3}{Comparison with experimental data}{131}{0}{4}
+\beamer@sectionintoc {5}{A new parallelization code}{132}{0}{5}
+\beamer@subsectionintoc {5}{1}{The MPI approach}{133}{0}{5}
+\beamer@subsectionintoc {5}{2}{Speedup comparison}{136}{0}{5}
