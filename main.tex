@@ -1325,6 +1325,21 @@
             \centering
             \includegraphics[width=\textwidth]{assym_centroids.pdf}
         \end{figure}
+        \begin{center}
+            \begin{tikzpicture}[overlay,remember picture]
+                \draw[-Stealth]  ([xshift=-2cm,yshift=-2.5cm]current page.center)--([xshift=-2.4cm,yshift=-2.5cm]current page.center);
+                \node[anchor=west] at ([xshift=-2cm,yshift=-2.5cm]current page.center) {$4p$ and $6p$};
+
+                \draw[-Stealth]  ([xshift=2.6cm,yshift=0cm]current page.center)--([xshift=2.6cm,yshift=-1.8cm]current page.center);
+                \node[anchor=south] at ([xshift=2.6cm,yshift=0cm]current page.center) {$4s$};
+
+                \draw[-Stealth]  ([xshift=5cm,yshift=-2.3cm]current page.center)--([xshift=3cm,yshift=-2.3cm]current page.center);
+                \node[anchor=west] at ([xshift=5cm,yshift=-2.3cm]current page.center) {$4p$};
+
+                \draw[-Stealth]  ([xshift=5cm,yshift=-0cm]current page.center)--([xshift=3.5cm,yshift=0cm]current page.center);
+                \node[anchor=west] at ([xshift=5cm,yshift=0cm]current page.center) {$5p$};
+            \end{tikzpicture}
+        \end{center}
     \end{frame}
 
     
@@ -1333,6 +1348,28 @@
             \centering
             \includegraphics[width=\textwidth]{assym_widths.pdf}
         \end{figure}
+        \begin{center}
+            \begin{tikzpicture}[overlay,remember picture]
+                \draw[-Stealth]  ([xshift=-1.5cm,yshift=.8cm]current page.center) -- ([xshift=-2.3cm,yshift=.8cm]current page.center);
+               \node[anchor=west] at ([xshift=-1.5cm,yshift=.8cm]current page.center) {$5p$};
+
+               \draw[-Stealth]  ([xshift=-1.5cm,yshift=1.8cm]current page.center) -- ([xshift=-2.5cm,yshift=1.8cm]current page.center);
+               \node[anchor=west] at ([xshift=-1.5cm,yshift=1.8cm]current page.center) {$4p$};
+
+               \draw[-Stealth]  ([xshift=-3.55cm,yshift=-1cm]current page.center) -- ([xshift=-3.55cm,yshift=-0.2cm]current page.center);
+               \node[anchor=north] at ([xshift=-3.55cm,yshift=-1cm]current page.center) {$4s$};
+
+
+               \draw[-Stealth]  ([xshift=5cm,yshift=-0.7cm]current page.center) -- ([xshift=3.5cm,yshift=-0.7cm]current page.center);
+               \node[anchor=west] at ([xshift=5cm,yshift=-0.7cm]current page.center) {$5p$};
+
+               \draw[-Stealth]  ([xshift=4cm,yshift=1.8cm]current page.center) -- ([xshift=3.3cm,yshift=1.8cm]current page.center);
+               \node[anchor=west] at ([xshift=4cm,yshift=1.8cm]current page.center) {$4p$};
+
+               \draw[-Stealth]  ([xshift=2.4cm,yshift=0cm]current page.center) -- ([xshift=2.4cm,yshift=1.1cm]current page.center);
+               \node[anchor=north] at ([xshift=2.4cm,yshift=0cm]current page.center) {$4s$};
+            \end{tikzpicture}
+        \end{center}
     \end{frame}
 
     
@@ -1341,7 +1378,18 @@
             \centering
             \includegraphics[width=\textwidth]{assym_intensities.pdf}
         \end{figure}
+        \begin{center}
+            \begin{tikzpicture}[overlay,remember picture]
+                \draw[-Stealth]  ([xshift=-4cm,yshift=1cm]current page.center) -- ([xshift=-3.2cm,yshift=1cm]current page.center);
+               \node[anchor=east] at  ([xshift=-4cm,yshift=1cm]current page.center) {$4p$};
 
+               \draw[-Stealth]  ([xshift=2cm,yshift=-2.5cm]current page.center) -- ([xshift=3cm,yshift=-2.5cm]current page.center);
+               \node[anchor=east] at  ([xshift=2cm,yshift=-2.5cm]current page.center) {$4p$};
+
+               \draw[-Stealth]  ([xshift=2cm,yshift=1.7cm]current page.center) -- ([xshift=3.5cm,yshift=1.7cm]current page.center);
+               \node[anchor=east] at  ([xshift=2cm,yshift=1.7cm]current page.center) {$5p$};
+            \end{tikzpicture}
+        \end{center} 
     \end{frame}
 
     
@@ -1438,7 +1486,16 @@
     \appendix
     \section*{+}
  \begin{frame}{Conclusion}
+    \only<1>{Multiple atomic structure calculations were performed for excited states of Copper, and a theoretical spectrum synthesized.
+
+     In it, various differences were observed when compared to when only accounting for ionization.}
+     \only<2>{
+        Due to the lack of high-resolution data, it was not possible to properly test the theory. With proper funding, new experiments could be performed for the spectral region of interest.
+     }
+
+     \only<3>{To aid in the performed calculations, a code-parallelization approach was implemented, and successfully surpassed expectations.
      
+     In the future, it should be tested in high-performance devices, such as supercomputers.}
  \end{frame}
 
  \begin{frame}[plain]{}

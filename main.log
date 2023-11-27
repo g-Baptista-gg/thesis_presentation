@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.21)  26 NOV 2023 23:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.21)  27 NOV 2023 17:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1903,34 +1903,46 @@ Overfull \vbox (9.04826pt too high) detected at line 1305
 <assym_centroids.pdf, id=10024, 570.21031pt x 281.13028pt>
 File: assym_centroids.pdf Graphic file (type pdf)
 <use assym_centroids.pdf>
-Package pdftex.def Info: assym_centroids.pdf  used on input line 1328.
+Package pdftex.def Info: assym_centroids.pdf  used on input line 1343.
 (pdftex.def)             Requested size: 342.2953pt x 168.76526pt.
- [127
+
+Overfull \vbox (12.84666pt too high) detected at line 1343
+ []
+
+[127
 
  <./assym_centroids.pdf>]
 <assym_widths.pdf, id=10140, 570.21031pt x 281.13028pt>
 File: assym_widths.pdf Graphic file (type pdf)
 <use assym_widths.pdf>
-Package pdftex.def Info: assym_widths.pdf  used on input line 1336.
+Package pdftex.def Info: assym_widths.pdf  used on input line 1373.
 (pdftex.def)             Requested size: 342.2953pt x 168.76526pt.
- [128
+
+Overfull \vbox (12.84666pt too high) detected at line 1373
+ []
+
+[128
 
  <./assym_widths.pdf>]
 <assym_intensities.pdf, id=10256, 570.21031pt x 281.13028pt>
 File: assym_intensities.pdf Graphic file (type pdf)
 <use assym_intensities.pdf>
-Package pdftex.def Info: assym_intensities.pdf  used on input line 1345.
+Package pdftex.def Info: assym_intensities.pdf  used on input line 1393.
 (pdftex.def)             Requested size: 342.2953pt x 168.76526pt.
- [129
+
+Overfull \vbox (12.84666pt too high) detected at line 1393
+ []
+
+[129
 
  <./assym_intensities.pdf>]
 <assym_index.pdf, id=10372, 281.13028pt x 208.8603pt>
 File: assym_index.pdf Graphic file (type pdf)
 <use assym_index.pdf>
-Package pdftex.def Info: assym_index.pdf  used on input line 1353.
+Package pdftex.def Info: assym_index.pdf  used on input line 1401.
 (pdftex.def)             Requested size: 239.60567pt x 178.01013pt.
 
-Overfull \vbox (4.49153pt too high) detected at line 1353
+Overfull \vbox (4.49153pt too high) detected at line 1401
  []
 
 [130
@@ -1939,10 +1951,10 @@ Overfull \vbox (4.49153pt too high) detected at line 1353
 <ito.png, id=10487, 551.05875pt x 420.06938pt>
 File: ito.png Graphic file (type png)
 <use ito.png>
-Package pdftex.def Info: ito.png  used on input line 1362.
+Package pdftex.def Info: ito.png  used on input line 1410.
 (pdftex.def)             Requested size: 239.60567pt x 182.65178pt.
 
-Overfull \vbox (9.13318pt too high) detected at line 1362
+Overfull \vbox (9.13318pt too high) detected at line 1410
  []
 
 [131
@@ -1959,90 +1971,94 @@ Overfull \vbox (9.13318pt too high) detected at line 1362
 <amdahl.pdf, id=10936, 425.67029pt x 208.8603pt>
 File: amdahl.pdf Graphic file (type pdf)
 <use amdahl.pdf>
-Package pdftex.def Info: amdahl.pdf  used on input line 1435.
+Package pdftex.def Info: amdahl.pdf  used on input line 1483.
 (pdftex.def)             Requested size: 342.2953pt x 167.9553pt.
  [136
 
  <./amdahl.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 1439.
+(hyperref)                removing `\translate ' on input line 1487.
 
 [137
 
-]
+] [138
 
-Package tikz-feynman Warning: The key you tried to use '/graph drawing/node distance' requires LuaTeX. It will be ignored. on input line 1499.
-
-
-Package tikz-feynman Warning: The key you tried to use '/graph drawing/level distance' requires LuaTeX. It will be ignored. on input line 1499.
-
-
-Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling distance' requires LuaTeX. It will be ignored. on input line 1499.
-
-
-Package tikz-feynman Warning: The key you tried to use '/graph drawing/node distance' requires LuaTeX. It will be ignored. on input line 1499.
-
-
-Package tikz-feynman Warning: The key you tried to use '/graph drawing/level distance' requires LuaTeX. It will be ignored. on input line 1499.
-
-
-Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling distance' requires LuaTeX. It will be ignored. on input line 1499.
-
-[138
+] [139
 
 ]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-[139
 
-] [140
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node distance' requires LuaTeX. It will be ignored. on input line 1556.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level distance' requires LuaTeX. It will be ignored. on input line 1556.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling distance' requires LuaTeX. It will be ignored. on input line 1556.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node distance' requires LuaTeX. It will be ignored. on input line 1556.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level distance' requires LuaTeX. It will be ignored. on input line 1556.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling distance' requires LuaTeX. It will be ignored. on input line 1556.
+
+[140
 
 ]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 [141
 
+] [142
+
 ]
-<thomas_model.png, id=11161, 475.02469pt x 557.08125pt>
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+[143
+
+]
+<thomas_model.png, id=11175, 475.02469pt x 557.08125pt>
 File: thomas_model.png Graphic file (type png)
 <use thomas_model.png>
-Package pdftex.def Info: thomas_model.png  used on input line 1556.
+Package pdftex.def Info: thomas_model.png  used on input line 1613.
 (pdftex.def)             Requested size: 138.6277pt x 162.56946pt.
 
-Overfull \vbox (1.64099pt too high) detected at line 1556
+Overfull \vbox (1.64099pt too high) detected at line 1613
  []
 
-[142
+[144
 
- <./thomas_model.png>] [143
+ <./thomas_model.png>] [145
 
-] [144
-
-] [145
-
-]
-Underfull \hbox (badness 10000) detected at line 1615
-[][][][][][][][][]
- []
-
-[146
+] [146
 
 ] [147
 
-] [148
-
 ]
-<K_lorentz_voigt.pdf, id=11273, 281.13028pt x 208.70741pt>
-File: K_lorentz_voigt.pdf Graphic file (type pdf)
-<use K_lorentz_voigt.pdf>
-Package pdftex.def Info: K_lorentz_voigt.pdf  used on input line 1615.
-(pdftex.def)             Requested size: 239.60567pt x 177.87982pt.
-
-Overfull \vbox (4.36122pt too high) detected at line 1615
+Underfull \hbox (badness 10000) detected at line 1672
+[][][][][][][][][]
  []
 
-[149
+[148
+
+] [149
+
+] [150
+
+]
+<K_lorentz_voigt.pdf, id=11287, 281.13028pt x 208.70741pt>
+File: K_lorentz_voigt.pdf Graphic file (type pdf)
+<use K_lorentz_voigt.pdf>
+Package pdftex.def Info: K_lorentz_voigt.pdf  used on input line 1672.
+(pdftex.def)             Requested size: 239.60567pt x 177.87982pt.
+
+Overfull \vbox (4.36122pt too high) detected at line 1672
+ []
+
+[151
 
  <./K_lorentz_voigt.pdf>]
 \tf@nav=\write7
@@ -2079,10 +2095,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46282 strings out of 475722
- 1011904 string characters out of 5785825
+ 46292 strings out of 475722
+ 1012087 string characters out of 5785825
  1936763 words of memory out of 5000000
- 65942 multiletter control sequences out of 15000+600000
+ 65948 multiletter control sequences out of 15000+600000
  554901 words of font info for 180 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,1950b,3024s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2090,10 +2106,10 @@ Here is how much of TeX's memory you used:
 pdfTeX warning (dest): name{cite.0@PhysRevLett.52.417} has been referenced but does not exist, replaced by a fixed one
 
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (149 pages, 2381078 bytes).
+Output written on main.pdf (151 pages, 2384833 bytes).
 PDF statistics:
- 11454 PDF objects out of 12825 (max. 8388607)
- 8194 compressed objects within 82 object streams
- 323 named destinations out of 1000 (max. 500000)
+ 11472 PDF objects out of 12825 (max. 8388607)
+ 8209 compressed objects within 83 object streams
+ 327 named destinations out of 1000 (max. 500000)
  2746 words of extra memory for PDF output out of 10000 (max. 10000000)
 
